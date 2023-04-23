@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct GridStatusApp: App {
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Dashboard(vm: ViewModel())
         }
     }
 }

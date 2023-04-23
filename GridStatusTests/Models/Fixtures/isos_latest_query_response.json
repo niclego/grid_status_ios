@@ -1,0 +1,87 @@
+{
+    "status_code": 200,
+    "data": [
+        {
+            "iso": "caiso",
+            "latest_load": 15423.0,
+            "load_time_utc": "2023-04-23T17:25:00+00:00",
+            "latest_primary_power_source": "solar",
+            "primary_power_source_time_utc": "2023-04-23T17:25:00+00:00",
+            "latest_lmp_market": "REAL_TIME",
+            "latest_lmp_location": "TH_NP15_GEN-APND",
+            "latest_lmp": 43.4522,
+            "lmp_time_utc": "2023-04-23T17:25:00+00:00"
+        },
+        {
+            "iso": "pjm",
+            "latest_load": 72727.234375,
+            "load_time_utc": "2023-04-23T17:20:00+00:00",
+            "latest_primary_power_source": "gas",
+            "primary_power_source_time_utc": "2023-04-23T17:05:00+00:00",
+            "latest_lmp_market": "REAL_TIME",
+            "latest_lmp_location": "PJM-RTO",
+            "latest_lmp": 18.63,
+            "lmp_time_utc": "2023-04-23T17:15:00+00:00"
+        },
+        {
+            "iso": "isone",
+            "latest_load": 11696.292,
+            "load_time_utc": "2023-04-23T17:25:00+00:00",
+            "latest_primary_power_source": "natural_gas",
+            "primary_power_source_time_utc": "2023-04-23T17:20:00+00:00",
+            "latest_lmp_market": "REAL_TIME",
+            "latest_lmp_location": ".H.INTERNAL_HUB",
+            "latest_lmp": 22.46,
+            "lmp_time_utc": "2023-04-23T17:25:00+00:00"
+        },
+        {
+            "iso": "spp",
+            "latest_load": 26865.322,
+            "load_time_utc": "2023-04-23T17:25:00+00:00",
+            "latest_primary_power_source": "natural_gas",
+            "primary_power_source_time_utc": "2023-04-23T17:20:00+00:00",
+            "latest_lmp_market": "REAL_TIME",
+            "latest_lmp_location": "SPPNORTH_HUB",
+            "latest_lmp": 27.0731,
+            "lmp_time_utc": "2023-04-23T17:25:00+00:00"
+        },
+        {
+            "iso": "nyiso",
+            "latest_load": 13956.743900000001,
+            "load_time_utc": "2023-04-23T17:10:00+00:00",
+            "latest_primary_power_source": "hydro",
+            "primary_power_source_time_utc": "2023-04-23T17:10:00+00:00",
+            "latest_lmp_market": "REAL_TIME",
+            "latest_lmp_location": "N.Y.C.",
+            "latest_lmp": 25.81,
+            "lmp_time_utc": "2023-04-23T17:20:00+00:00"
+        },
+        {
+            "iso": "miso",
+            "latest_load": 63584.0,
+            "load_time_utc": "2023-04-23T17:25:00+00:00",
+            "latest_primary_power_source": "natural_gas",
+            "primary_power_source_time_utc": "2023-04-23T17:25:00+00:00",
+            "latest_lmp_market": "REAL_TIME",
+            "latest_lmp_location": "ILLINOIS.HUB",
+            "latest_lmp": 22.42,
+            "lmp_time_utc": "2023-04-23T17:25:00+00:00"
+        },
+        {
+            "iso": "ercot",
+            "latest_load": 41426.0,
+            "load_time_utc": "2023-04-23T17:20:00+00:00",
+            "latest_primary_power_source": "natural_gas",
+            "primary_power_source_time_utc": "2023-04-23T17:25:00+00:00",
+            "latest_lmp_market": "REAL_TIME",
+            "latest_lmp_location": "HB_HOUSTON",
+            "latest_lmp": 18.24,
+            "lmp_time_utc": "2023-04-23T17:30:00+00:00"
+        }
+    ],
+    "meta": {
+        "page": 1,
+        "limit": 10000,
+        "hasNextPage": false
+    }
+}
