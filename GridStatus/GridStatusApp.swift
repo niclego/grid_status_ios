@@ -12,10 +12,7 @@ struct GridStatusApp: App {
 
     var body: some Scene {
         WindowGroup {
-            Dashboard(vm: ViewModel(
-                networkManager: NetworkManagerMock(),
-                sleeper: Sleeper(durationInSeconds: 5)
-            ))
+            Dashboard(vm: ViewModel())
         }
     }
 }

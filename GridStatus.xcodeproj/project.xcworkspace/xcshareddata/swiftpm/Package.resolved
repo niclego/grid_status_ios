@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "grid_status_core",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/niclego/grid_status_core.git",
+      "state" : {
+        "branch" : "develop",
+        "revision" : "ed53ed975932fef8a1af29a48177fa9e31b4c7f9"
+      }
+    }
+  ],
+  "version" : 2
+}

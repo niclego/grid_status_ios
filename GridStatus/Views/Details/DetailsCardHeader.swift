@@ -2,6 +2,7 @@ import SwiftUI
 
 struct DetailsCardHeader: View {
     @Environment(\.colorScheme) var colorScheme
+
     let displayName: String
     let updatedTime: String
 

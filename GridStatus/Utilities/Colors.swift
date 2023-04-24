@@ -4,6 +4,8 @@ enum GridStatusColor {
     case batteries
     case biomass
     case coal
+    case dataText
+    case dashboardBackground
     case geothermal
     case imports
     case largeHydro
@@ -33,6 +35,10 @@ enum GridStatusColor {
             return Color(red: 1, green: 2, blue: 3)
         case .biomass:
             return Color(red: 1, green: 2, blue: 3)
+        case .dataText:
+            return Color.secondary
+        case .dashboardBackground:
+            return Color(red: 33/255, green: 33/255, blue: 34/255)
         case .coal:
             return Color(red: 1, green: 2, blue: 3)
         case .geothermal:
@@ -50,7 +56,7 @@ enum GridStatusColor {
         case .solar:
             return Color(red: 1, green: 2, blue: 3)
         case .subtitle:
-            return Color.secondary
+            return Color.primary
         case .time:
             return Color.secondary
         case .title:
@@ -68,6 +74,10 @@ enum GridStatusColor {
             return Color(red: 1, green: 2, blue: 3)
         case .coal:
             return Color(red: 1, green: 2, blue: 3)
+        case .dataText:
+            return Color(red: 62/255, green: 75/255, blue: 93/255)
+        case .dashboardBackground:
+            return Color(red: 239/255, green: 243/255, blue: 248/255)
         case .geothermal:
             return Color(red: 1, green: 2, blue: 3)
         case .imports:
@@ -83,11 +93,11 @@ enum GridStatusColor {
         case .solar:
             return Color(red: 1, green: 2, blue: 3)
         case .subtitle:
-            return Color.secondary
+            return Color(red: 89/255, green: 105/255, blue: 127/255)
         case .time:
-            return Color.secondary
+            return Color(red: 96/255, green: 103/255, blue: 116/255)
         case .title:
-            return Color.primary
+            return Color(red: 48/255, green: 57/255, blue: 71/255)
         case .wind:
             return Color(red: 1, green: 2, blue: 3)
         }

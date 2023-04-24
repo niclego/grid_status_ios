@@ -29,6 +29,6 @@ struct DetailsCardData: View {
 
 struct DetailsCardData_Previews: PreviewProvider {
     static var previews: some View {
-        DetailsCardData(displayPrimarySource: ISO.example.displayPrimarySource, displayLoad: ISO.example.displayLoad, displayPrice: ISO.example.displayPrice).padding()
+        DetailsCardData(displayPrimarySource: "--", displayLoad: "--", displayPrice: "--").padding()
     }
 }

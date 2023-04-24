@@ -3,7 +3,7 @@ import SwiftUI
 struct ChartsContainer: View {
     @EnvironmentObject var vm: ViewModel
     
-    let iso: ISO
+    let iso: ISOViewItem
 
     var body: some View {
         ScrollView {
@@ -20,7 +20,7 @@ struct ChartsContainer: View {
 
 struct ChartsContainer_Previews: PreviewProvider {
     static var previews: some View {
-        ChartsContainer(iso: ISO.example)
+        ChartsContainer(iso: ISOViewItem.example)
             .environmentObject(ViewModel()).padding()
     }
 }

@@ -1,25 +1,28 @@
 import SwiftUI
 
 struct DetailsCard: View {
-    let iso: ISO
+    let iso: ISOViewItem
 
     var body: some View {
         VStack(spacing: 10) {
             DetailsCardHeader(
-                displayName: iso.displayName,
+                displayName: iso.name,
                 updatedTime: iso.updatedTime
             )
             DetailsCardData(
-                displayPrimarySource: iso.displayPrimarySource,
-                displayLoad: iso.displayLoad,
-                displayPrice: iso.displayPrice
+                displayPrimarySource: iso.primarySource,
+                displayLoad: iso.load,
+                displayPrice: iso.price
             )
         }
+        .padding()
+        .background(.background)
+        .cornerRadius(12)
     }
 }
 
 struct DetailsCard_Previews: PreviewProvider {
     static var previews: some View {
-        DetailsCard(iso: ISO.example).padding()
+        DetailsCard(iso: ISOViewItem.example).padding()
     }
 }

@@ -15,7 +15,6 @@
 		822EAA2B29F5843700243ED6 /* GridStatusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822EAA2A29F5843700243ED6 /* GridStatusUITests.swift */; };
 		822EAA2D29F5843700243ED6 /* GridStatusUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822EAA2C29F5843700243ED6 /* GridStatusUITestsLaunchTests.swift */; };
 		822EAA3B29F584F700243ED6 /* isos_latest_query_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 822EAA3A29F584F700243ED6 /* isos_latest_query_response.json */; };
-		822EAA3E29F5857100243ED6 /* ISO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822EAA3D29F5857100243ED6 /* ISO.swift */; };
 		822EAA4229F5A1BA00243ED6 /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822EAA4129F5A1BA00243ED6 /* DateFormatters.swift */; };
 		822EAA4529F5A38800243ED6 /* DateFormattersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822EAA4429F5A38800243ED6 /* DateFormattersTests.swift */; };
 		822EAA4929F5ACF300243ED6 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822EAA4829F5ACF300243ED6 /* ViewModel.swift */; };
@@ -26,14 +25,9 @@
 		822EAA5629F5C81800243ED6 /* ChartsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822EAA5529F5C81800243ED6 /* ChartsContainer.swift */; };
 		822EAA5829F5CAC900243ED6 /* DetailsCardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822EAA5729F5CAC900243ED6 /* DetailsCardData.swift */; };
 		8287F9E229F5F9CA00CA5F42 /* DetailsCardDataLabelText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8287F9E129F5F9CA00CA5F42 /* DetailsCardDataLabelText.swift */; };
-		82A4265629F6CF33001EEC09 /* Sleeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A4265529F6CF33001EEC09 /* Sleeper.swift */; };
 		82A4265B29F6D45E001EEC09 /* LoadableContent+ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A4265A29F6D45E001EEC09 /* LoadableContent+ContainerView.swift */; };
-		82A4265D29F6D9CD001EEC09 /* GridStatusError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A4265C29F6D9CD001EEC09 /* GridStatusError.swift */; };
-		82EDE18529F5E268007CF4AB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EDE18429F5E268007CF4AB /* NetworkManager.swift */; };
-		82EDE18829F5E4F4007CF4AB /* ISOLatestRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EDE18729F5E4F4007CF4AB /* ISOLatestRequest.swift */; };
-		82EDE18A29F5E522007CF4AB /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EDE18929F5E522007CF4AB /* Requestable.swift */; };
-		82EDE18C29F5F440007CF4AB /* NetworkManagable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EDE18B29F5F440007CF4AB /* NetworkManagable.swift */; };
-		82EDE18E29F5F4AB007CF4AB /* NetworkManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EDE18D29F5F4AB007CF4AB /* NetworkManagerMock.swift */; };
+		82D511D429F70BEF001DEA35 /* grid_status_core in Frameworks */ = {isa = PBXBuildFile; productRef = 82D511D329F70BEF001DEA35 /* grid_status_core */; };
+		82D511D629F71657001DEA35 /* ISOViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D511D529F71657001DEA35 /* ISOViewItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +60,6 @@
 		822EAA2A29F5843700243ED6 /* GridStatusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridStatusUITests.swift; sourceTree = "<group>"; };
 		822EAA2C29F5843700243ED6 /* GridStatusUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridStatusUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		822EAA3A29F584F700243ED6 /* isos_latest_query_response.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = isos_latest_query_response.json; sourceTree = "<group>"; };
-		822EAA3D29F5857100243ED6 /* ISO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISO.swift; sourceTree = "<group>"; };
 		822EAA4129F5A1BA00243ED6 /* DateFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatters.swift; sourceTree = "<group>"; };
 		822EAA4429F5A38800243ED6 /* DateFormattersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormattersTests.swift; sourceTree = "<group>"; };
 		822EAA4829F5ACF300243ED6 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
@@ -77,14 +70,8 @@
 		822EAA5529F5C81800243ED6 /* ChartsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsContainer.swift; sourceTree = "<group>"; };
 		822EAA5729F5CAC900243ED6 /* DetailsCardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCardData.swift; sourceTree = "<group>"; };
 		8287F9E129F5F9CA00CA5F42 /* DetailsCardDataLabelText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCardDataLabelText.swift; sourceTree = "<group>"; };
-		82A4265529F6CF33001EEC09 /* Sleeper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sleeper.swift; sourceTree = "<group>"; };
 		82A4265A29F6D45E001EEC09 /* LoadableContent+ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoadableContent+ContainerView.swift"; sourceTree = "<group>"; };
-		82A4265C29F6D9CD001EEC09 /* GridStatusError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridStatusError.swift; sourceTree = "<group>"; };
-		82EDE18429F5E268007CF4AB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		82EDE18729F5E4F4007CF4AB /* ISOLatestRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISOLatestRequest.swift; sourceTree = "<group>"; };
-		82EDE18929F5E522007CF4AB /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
-		82EDE18B29F5F440007CF4AB /* NetworkManagable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagable.swift; sourceTree = "<group>"; };
-		82EDE18D29F5F4AB007CF4AB /* NetworkManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerMock.swift; sourceTree = "<group>"; };
+		82D511D529F71657001DEA35 /* ISOViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISOViewItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82D511D429F70BEF001DEA35 /* grid_status_core in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,11 +123,9 @@
 		822EAA0D29F5843600243ED6 /* GridStatus */ = {
 			isa = PBXGroup;
 			children = (
-				82EDE18329F5E24D007CF4AB /* Network */,
 				822EAA4C29F5C34500243ED6 /* Views */,
 				822EAA4729F5ACC300243ED6 /* ViewModels */,
 				822EAA4629F5A99100243ED6 /* Utilities */,
-				822EAA3C29F5854300243ED6 /* Models */,
 				822EAA0E29F5843600243ED6 /* GridStatusApp.swift */,
 				822EAA1229F5843700243ED6 /* Assets.xcassets */,
 				822EAA1429F5843700243ED6 /* GridStatus.entitlements */,
@@ -182,14 +168,6 @@
 			path = Fixtures;
 			sourceTree = "<group>";
 		};
-		822EAA3C29F5854300243ED6 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				822EAA3D29F5857100243ED6 /* ISO.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		822EAA3F29F5895600243ED6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,7 +188,6 @@
 		822EAA4629F5A99100243ED6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				82A4265229F6CE6C001EEC09 /* Sleeper */,
 				822EAA4129F5A1BA00243ED6 /* DateFormatters.swift */,
 				822EAA4A29F5B54600243ED6 /* Colors.swift */,
 			);
@@ -221,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				822EAA4829F5ACF300243ED6 /* ViewModel.swift */,
+				82D511D529F71657001DEA35 /* ISOViewItem.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -256,41 +234,12 @@
 			path = Charts;
 			sourceTree = "<group>";
 		};
-		82A4265229F6CE6C001EEC09 /* Sleeper */ = {
-			isa = PBXGroup;
-			children = (
-				82A4265529F6CF33001EEC09 /* Sleeper.swift */,
-			);
-			path = Sleeper;
-			sourceTree = "<group>";
-		};
 		82A4265929F6D361001EEC09 /* LoadableContent */ = {
 			isa = PBXGroup;
 			children = (
 				82A4265A29F6D45E001EEC09 /* LoadableContent+ContainerView.swift */,
 			);
 			path = LoadableContent;
-			sourceTree = "<group>";
-		};
-		82EDE18329F5E24D007CF4AB /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				82EDE18629F5E4D9007CF4AB /* Requests */,
-				82EDE18429F5E268007CF4AB /* NetworkManager.swift */,
-				82EDE18B29F5F440007CF4AB /* NetworkManagable.swift */,
-				82EDE18D29F5F4AB007CF4AB /* NetworkManagerMock.swift */,
-				82A4265C29F6D9CD001EEC09 /* GridStatusError.swift */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		82EDE18629F5E4D9007CF4AB /* Requests */ = {
-			isa = PBXGroup;
-			children = (
-				82EDE18729F5E4F4007CF4AB /* ISOLatestRequest.swift */,
-				82EDE18929F5E522007CF4AB /* Requestable.swift */,
-			);
-			path = Requests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +258,9 @@
 			dependencies = (
 			);
 			name = GridStatus;
+			packageProductDependencies = (
+				82D511D329F70BEF001DEA35 /* grid_status_core */,
+			);
 			productName = GridStatus;
 			productReference = 822EAA0B29F5843600243ED6 /* GridStatus.app */;
 			productType = "com.apple.product-type.application";
@@ -381,6 +333,9 @@
 				Base,
 			);
 			mainGroup = 822EAA0229F5843600243ED6;
+			packageReferences = (
+				82D511D229F70BEF001DEA35 /* XCRemoteSwiftPackageReference "grid_status_core" */,
+			);
 			productRefGroup = 822EAA0C29F5843600243ED6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -424,21 +379,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82EDE18529F5E268007CF4AB /* NetworkManager.swift in Sources */,
-				82EDE18A29F5E522007CF4AB /* Requestable.swift in Sources */,
-				82EDE18E29F5F4AB007CF4AB /* NetworkManagerMock.swift in Sources */,
 				822EAA4229F5A1BA00243ED6 /* DateFormatters.swift in Sources */,
+				82D511D629F71657001DEA35 /* ISOViewItem.swift in Sources */,
 				822EAA4B29F5B54600243ED6 /* Colors.swift in Sources */,
-				82A4265D29F6D9CD001EEC09 /* GridStatusError.swift in Sources */,
 				822EAA4F29F5C5C700243ED6 /* DetailsCard.swift in Sources */,
 				8287F9E229F5F9CA00CA5F42 /* DetailsCardDataLabelText.swift in Sources */,
 				822EAA5329F5C68A00243ED6 /* DetailsCardDataText.swift in Sources */,
 				822EAA4929F5ACF300243ED6 /* ViewModel.swift in Sources */,
 				822EAA1129F5843600243ED6 /* Dashboard.swift in Sources */,
-				822EAA3E29F5857100243ED6 /* ISO.swift in Sources */,
-				82EDE18829F5E4F4007CF4AB /* ISOLatestRequest.swift in Sources */,
-				82A4265629F6CF33001EEC09 /* Sleeper.swift in Sources */,
-				82EDE18C29F5F440007CF4AB /* NetworkManagable.swift in Sources */,
 				822EAA5629F5C81800243ED6 /* ChartsContainer.swift in Sources */,
 				82A4265B29F6D45E001EEC09 /* LoadableContent+ContainerView.swift in Sources */,
 				822EAA0F29F5843600243ED6 /* GridStatusApp.swift in Sources */,
@@ -796,6 +744,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		82D511D229F70BEF001DEA35 /* XCRemoteSwiftPackageReference "grid_status_core" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/niclego/grid_status_core.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		82D511D329F70BEF001DEA35 /* grid_status_core */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 82D511D229F70BEF001DEA35 /* XCRemoteSwiftPackageReference "grid_status_core" */;
+			productName = grid_status_core;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 822EAA0329F5843600243ED6 /* Project object */;
 }
