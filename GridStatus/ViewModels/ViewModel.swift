@@ -1,39 +1,88 @@
 import Combine
+import Foundation
 
 class ViewModel: ObservableObject {
     
     // MARK: - Published
-    @Published var error: String?
+    @Published var loadingState: LoadableContent.LoadingState = .loading
     @Published var isos = [ISO]()
     @Published var selectedIso: ISO? = nil
     
     // MARK: - Constants
     private let networkManager: NetworkManagable
+    private let sleeper: Sleepable
     
     // MARK: - Variables
     private var fetchIsosInProgress = false
-
+    
     // MARK: - Lifecycle
-    init(networkManager: NetworkManagable = NetworkManager()) {
+    init(
+        networkManager: NetworkManagable = NetworkManager(),
+        sleeper: Sleepable = Sleeper()
+    ) {
         self.networkManager = networkManager
+        self.sleeper = sleeper
     }
     
     // MARK: - Networking
-    @MainActor
-    func fetchIsos() async {
-        defer {
-            fetchIsosInProgress = false
+    var task: Task<(), Error>?
+    
+    private func isoStream(
+        sleeper: Sleepable,
+        fetchIsos: @escaping () async throws -> [ISO]
+    ) -> AsyncThrowingStream<[ISO], Error> {
+        return AsyncThrowingStream {            
+            try await sleeper.sleep(seconds: 1)
+            let isos = try await fetchIsos()
+            return isos
         }
+    }
+    
+    func subscribe() {
+        loadingState = .loading
 
-        guard fetchIsosInProgress == false else { return }
+        let networkManager = networkManager
+        let sleeper = sleeper
+
+        let stream = isoStream(
+            sleeper: sleeper,
+            fetchIsos: fetchIsos(
+                networkManager: networkManager
+            )
+        )
         
-        do {
-            fetchIsosInProgress = true
+        task = Task {
+            do {
+                for try await isos in stream {
+                    await publish(isos: isos)
+                }
+            } catch {
+                await publish(error: error)
+            }
+        }
+    }
+    
+    @MainActor
+    private func publish(error: Error) {
+        self.loadingState = .error(error: error)
+    }
+    
+    @MainActor
+    private func publish(isos: [ISO]) {
+        self.loadingState = .loaded
+        self.isos = isos
+    }
+    
+    private func fetchIsos(
+        networkManager: NetworkManagable
+    ) -> () async throws  -> [ISO] {
+        return {
             let response: ISOLatestResponse = try await networkManager.request(request: ISOLatestRequest.factory)
-
-            isos = response.data
-        } catch {
-            self.error = error.localizedDescription
+            let isos = response.data
+            if isos.isEmpty {
+                throw GridStatusError.noData
+            }
+            return isos
         }
     }
 }
