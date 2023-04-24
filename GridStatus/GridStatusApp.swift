@@ -14,7 +14,7 @@ struct GridStatusApp: App {
         WindowGroup {
             Dashboard(vm: ViewModel(
                 networkManager: NetworkManagerMock(),
-                sleeper: SleeperMock()
+                sleeper: Sleeper(durationInSeconds: 5)
             ))
         }
     }

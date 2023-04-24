@@ -26,9 +26,7 @@
 		822EAA5629F5C81800243ED6 /* ChartsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822EAA5529F5C81800243ED6 /* ChartsContainer.swift */; };
 		822EAA5829F5CAC900243ED6 /* DetailsCardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822EAA5729F5CAC900243ED6 /* DetailsCardData.swift */; };
 		8287F9E229F5F9CA00CA5F42 /* DetailsCardDataLabelText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8287F9E129F5F9CA00CA5F42 /* DetailsCardDataLabelText.swift */; };
-		82A4265429F6CEDA001EEC09 /* Sleepable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A4265329F6CEDA001EEC09 /* Sleepable.swift */; };
 		82A4265629F6CF33001EEC09 /* Sleeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A4265529F6CF33001EEC09 /* Sleeper.swift */; };
-		82A4265829F6CF4B001EEC09 /* SleeperMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A4265729F6CF4B001EEC09 /* SleeperMock.swift */; };
 		82A4265B29F6D45E001EEC09 /* LoadableContent+ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A4265A29F6D45E001EEC09 /* LoadableContent+ContainerView.swift */; };
 		82A4265D29F6D9CD001EEC09 /* GridStatusError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A4265C29F6D9CD001EEC09 /* GridStatusError.swift */; };
 		82EDE18529F5E268007CF4AB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EDE18429F5E268007CF4AB /* NetworkManager.swift */; };
@@ -79,9 +77,7 @@
 		822EAA5529F5C81800243ED6 /* ChartsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsContainer.swift; sourceTree = "<group>"; };
 		822EAA5729F5CAC900243ED6 /* DetailsCardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCardData.swift; sourceTree = "<group>"; };
 		8287F9E129F5F9CA00CA5F42 /* DetailsCardDataLabelText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCardDataLabelText.swift; sourceTree = "<group>"; };
-		82A4265329F6CEDA001EEC09 /* Sleepable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sleepable.swift; sourceTree = "<group>"; };
 		82A4265529F6CF33001EEC09 /* Sleeper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sleeper.swift; sourceTree = "<group>"; };
-		82A4265729F6CF4B001EEC09 /* SleeperMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleeperMock.swift; sourceTree = "<group>"; };
 		82A4265A29F6D45E001EEC09 /* LoadableContent+ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoadableContent+ContainerView.swift"; sourceTree = "<group>"; };
 		82A4265C29F6D9CD001EEC09 /* GridStatusError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridStatusError.swift; sourceTree = "<group>"; };
 		82EDE18429F5E268007CF4AB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -263,9 +259,7 @@
 		82A4265229F6CE6C001EEC09 /* Sleeper */ = {
 			isa = PBXGroup;
 			children = (
-				82A4265329F6CEDA001EEC09 /* Sleepable.swift */,
 				82A4265529F6CF33001EEC09 /* Sleeper.swift */,
-				82A4265729F6CF4B001EEC09 /* SleeperMock.swift */,
 			);
 			path = Sleeper;
 			sourceTree = "<group>";
@@ -434,10 +428,8 @@
 				82EDE18A29F5E522007CF4AB /* Requestable.swift in Sources */,
 				82EDE18E29F5F4AB007CF4AB /* NetworkManagerMock.swift in Sources */,
 				822EAA4229F5A1BA00243ED6 /* DateFormatters.swift in Sources */,
-				82A4265429F6CEDA001EEC09 /* Sleepable.swift in Sources */,
 				822EAA4B29F5B54600243ED6 /* Colors.swift in Sources */,
 				82A4265D29F6D9CD001EEC09 /* GridStatusError.swift in Sources */,
-				82A4265829F6CF4B001EEC09 /* SleeperMock.swift in Sources */,
 				822EAA4F29F5C5C700243ED6 /* DetailsCard.swift in Sources */,
 				8287F9E229F5F9CA00CA5F42 /* DetailsCardDataLabelText.swift in Sources */,
 				822EAA5329F5C68A00243ED6 /* DetailsCardDataText.swift in Sources */,
@@ -620,7 +612,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -658,7 +650,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";

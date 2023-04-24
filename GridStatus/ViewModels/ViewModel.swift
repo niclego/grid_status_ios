@@ -10,7 +10,7 @@ class ViewModel: ObservableObject {
     
     // MARK: - Constants
     private let networkManager: NetworkManagable
-    private let sleeper: Sleepable
+    private let sleeper: Sleeper
     
     // MARK: - Variables
     private var fetchIsosInProgress = false
@@ -18,7 +18,7 @@ class ViewModel: ObservableObject {
     // MARK: - Lifecycle
     init(
         networkManager: NetworkManagable = NetworkManager(),
-        sleeper: Sleepable = Sleeper()
+        sleeper: Sleeper = Sleeper(durationInSeconds: 60)
     ) {
         self.networkManager = networkManager
         self.sleeper = sleeper
@@ -28,11 +28,11 @@ class ViewModel: ObservableObject {
     var task: Task<(), Error>?
     
     private func isoStream(
-        sleeper: Sleepable,
+        sleeper: Sleeper,
         fetchIsos: @escaping () async throws -> [ISO]
     ) -> AsyncThrowingStream<[ISO], Error> {
         return AsyncThrowingStream {            
-            try await sleeper.sleep(seconds: 1)
+            try await sleeper.sleep()
             let isos = try await fetchIsos()
             return isos
         }
