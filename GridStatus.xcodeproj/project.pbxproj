@@ -18,16 +18,9 @@
 		822EAA4229F5A1BA00243ED6 /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822EAA4129F5A1BA00243ED6 /* DateFormatters.swift */; };
 		822EAA4529F5A38800243ED6 /* DateFormattersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822EAA4429F5A38800243ED6 /* DateFormattersTests.swift */; };
 		822EAA4929F5ACF300243ED6 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822EAA4829F5ACF300243ED6 /* ViewModel.swift */; };
-		822EAA4B29F5B54600243ED6 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822EAA4A29F5B54600243ED6 /* Colors.swift */; };
-		822EAA4F29F5C5C700243ED6 /* DetailsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822EAA4E29F5C5C700243ED6 /* DetailsCard.swift */; };
-		822EAA5129F5C62D00243ED6 /* DetailsCardHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822EAA5029F5C62D00243ED6 /* DetailsCardHeader.swift */; };
-		822EAA5329F5C68A00243ED6 /* DetailsCardDataText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822EAA5229F5C68A00243ED6 /* DetailsCardDataText.swift */; };
 		822EAA5629F5C81800243ED6 /* ChartsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822EAA5529F5C81800243ED6 /* ChartsContainer.swift */; };
-		822EAA5829F5CAC900243ED6 /* DetailsCardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822EAA5729F5CAC900243ED6 /* DetailsCardData.swift */; };
-		8287F9E229F5F9CA00CA5F42 /* DetailsCardDataLabelText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8287F9E129F5F9CA00CA5F42 /* DetailsCardDataLabelText.swift */; };
-		82A4265B29F6D45E001EEC09 /* LoadableContent+ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A4265A29F6D45E001EEC09 /* LoadableContent+ContainerView.swift */; };
-		82D511D429F70BEF001DEA35 /* grid_status_core in Frameworks */ = {isa = PBXBuildFile; productRef = 82D511D329F70BEF001DEA35 /* grid_status_core */; };
-		82D511D629F71657001DEA35 /* ISOViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D511D529F71657001DEA35 /* ISOViewItem.swift */; };
+		8276E88D29F7FF2300C8A828 /* grid_status_common_ui in Frameworks */ = {isa = PBXBuildFile; productRef = 8276E88C29F7FF2300C8A828 /* grid_status_common_ui */; };
+		8276E89029F7FFE300C8A828 /* grid_status_core in Frameworks */ = {isa = PBXBuildFile; productRef = 8276E88F29F7FFE300C8A828 /* grid_status_core */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,15 +56,7 @@
 		822EAA4129F5A1BA00243ED6 /* DateFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatters.swift; sourceTree = "<group>"; };
 		822EAA4429F5A38800243ED6 /* DateFormattersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormattersTests.swift; sourceTree = "<group>"; };
 		822EAA4829F5ACF300243ED6 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		822EAA4A29F5B54600243ED6 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		822EAA4E29F5C5C700243ED6 /* DetailsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCard.swift; sourceTree = "<group>"; };
-		822EAA5029F5C62D00243ED6 /* DetailsCardHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCardHeader.swift; sourceTree = "<group>"; };
-		822EAA5229F5C68A00243ED6 /* DetailsCardDataText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCardDataText.swift; sourceTree = "<group>"; };
 		822EAA5529F5C81800243ED6 /* ChartsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsContainer.swift; sourceTree = "<group>"; };
-		822EAA5729F5CAC900243ED6 /* DetailsCardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCardData.swift; sourceTree = "<group>"; };
-		8287F9E129F5F9CA00CA5F42 /* DetailsCardDataLabelText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCardDataLabelText.swift; sourceTree = "<group>"; };
-		82A4265A29F6D45E001EEC09 /* LoadableContent+ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoadableContent+ContainerView.swift"; sourceTree = "<group>"; };
-		82D511D529F71657001DEA35 /* ISOViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISOViewItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82D511D429F70BEF001DEA35 /* grid_status_core in Frameworks */,
+				8276E88D29F7FF2300C8A828 /* grid_status_common_ui in Frameworks */,
+				8276E89029F7FFE300C8A828 /* grid_status_core in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,9 +109,9 @@
 		822EAA0D29F5843600243ED6 /* GridStatus */ = {
 			isa = PBXGroup;
 			children = (
-				822EAA4C29F5C34500243ED6 /* Views */,
-				822EAA4729F5ACC300243ED6 /* ViewModels */,
 				822EAA4629F5A99100243ED6 /* Utilities */,
+				822EAA4C29F5C34500243ED6 /* ViewContainers */,
+				822EAA4729F5ACC300243ED6 /* ViewModels */,
 				822EAA0E29F5843600243ED6 /* GridStatusApp.swift */,
 				822EAA1229F5843700243ED6 /* Assets.xcassets */,
 				822EAA1429F5843700243ED6 /* GridStatus.entitlements */,
@@ -189,7 +175,6 @@
 			isa = PBXGroup;
 			children = (
 				822EAA4129F5A1BA00243ED6 /* DateFormatters.swift */,
-				822EAA4A29F5B54600243ED6 /* Colors.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -198,32 +183,17 @@
 			isa = PBXGroup;
 			children = (
 				822EAA4829F5ACF300243ED6 /* ViewModel.swift */,
-				82D511D529F71657001DEA35 /* ISOViewItem.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		822EAA4C29F5C34500243ED6 /* Views */ = {
+		822EAA4C29F5C34500243ED6 /* ViewContainers */ = {
 			isa = PBXGroup;
 			children = (
-				82A4265929F6D361001EEC09 /* LoadableContent */,
-				822EAA1029F5843600243ED6 /* Dashboard.swift */,
 				822EAA5429F5C80000243ED6 /* Charts */,
-				822EAA4D29F5C34D00243ED6 /* Details */,
+				822EAA1029F5843600243ED6 /* Dashboard.swift */,
 			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		822EAA4D29F5C34D00243ED6 /* Details */ = {
-			isa = PBXGroup;
-			children = (
-				822EAA4E29F5C5C700243ED6 /* DetailsCard.swift */,
-				822EAA5729F5CAC900243ED6 /* DetailsCardData.swift */,
-				822EAA5229F5C68A00243ED6 /* DetailsCardDataText.swift */,
-				822EAA5029F5C62D00243ED6 /* DetailsCardHeader.swift */,
-				8287F9E129F5F9CA00CA5F42 /* DetailsCardDataLabelText.swift */,
-			);
-			path = Details;
+			path = ViewContainers;
 			sourceTree = "<group>";
 		};
 		822EAA5429F5C80000243ED6 /* Charts */ = {
@@ -232,14 +202,6 @@
 				822EAA5529F5C81800243ED6 /* ChartsContainer.swift */,
 			);
 			path = Charts;
-			sourceTree = "<group>";
-		};
-		82A4265929F6D361001EEC09 /* LoadableContent */ = {
-			isa = PBXGroup;
-			children = (
-				82A4265A29F6D45E001EEC09 /* LoadableContent+ContainerView.swift */,
-			);
-			path = LoadableContent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +221,8 @@
 			);
 			name = GridStatus;
 			packageProductDependencies = (
-				82D511D329F70BEF001DEA35 /* grid_status_core */,
+				8276E88C29F7FF2300C8A828 /* grid_status_common_ui */,
+				8276E88F29F7FFE300C8A828 /* grid_status_core */,
 			);
 			productName = GridStatus;
 			productReference = 822EAA0B29F5843600243ED6 /* GridStatus.app */;
@@ -334,7 +297,8 @@
 			);
 			mainGroup = 822EAA0229F5843600243ED6;
 			packageReferences = (
-				82D511D229F70BEF001DEA35 /* XCRemoteSwiftPackageReference "grid_status_core" */,
+				8276E88B29F7FF2300C8A828 /* XCRemoteSwiftPackageReference "grid_status_common_ui" */,
+				8276E88E29F7FFE300C8A828 /* XCRemoteSwiftPackageReference "grid_status_core" */,
 			);
 			productRefGroup = 822EAA0C29F5843600243ED6 /* Products */;
 			projectDirPath = "";
@@ -380,18 +344,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				822EAA4229F5A1BA00243ED6 /* DateFormatters.swift in Sources */,
-				82D511D629F71657001DEA35 /* ISOViewItem.swift in Sources */,
-				822EAA4B29F5B54600243ED6 /* Colors.swift in Sources */,
-				822EAA4F29F5C5C700243ED6 /* DetailsCard.swift in Sources */,
-				8287F9E229F5F9CA00CA5F42 /* DetailsCardDataLabelText.swift in Sources */,
-				822EAA5329F5C68A00243ED6 /* DetailsCardDataText.swift in Sources */,
 				822EAA4929F5ACF300243ED6 /* ViewModel.swift in Sources */,
 				822EAA1129F5843600243ED6 /* Dashboard.swift in Sources */,
 				822EAA5629F5C81800243ED6 /* ChartsContainer.swift in Sources */,
-				82A4265B29F6D45E001EEC09 /* LoadableContent+ContainerView.swift in Sources */,
 				822EAA0F29F5843600243ED6 /* GridStatusApp.swift in Sources */,
-				822EAA5129F5C62D00243ED6 /* DetailsCardHeader.swift in Sources */,
-				822EAA5829F5CAC900243ED6 /* DetailsCardData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -746,7 +702,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		82D511D229F70BEF001DEA35 /* XCRemoteSwiftPackageReference "grid_status_core" */ = {
+		8276E88B29F7FF2300C8A828 /* XCRemoteSwiftPackageReference "grid_status_common_ui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/niclego/grid_status_common_ui.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+		8276E88E29F7FFE300C8A828 /* XCRemoteSwiftPackageReference "grid_status_core" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/niclego/grid_status_core.git";
 			requirement = {
@@ -757,9 +721,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		82D511D329F70BEF001DEA35 /* grid_status_core */ = {
+		8276E88C29F7FF2300C8A828 /* grid_status_common_ui */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 82D511D229F70BEF001DEA35 /* XCRemoteSwiftPackageReference "grid_status_core" */;
+			package = 8276E88B29F7FF2300C8A828 /* XCRemoteSwiftPackageReference "grid_status_common_ui" */;
+			productName = grid_status_common_ui;
+		};
+		8276E88F29F7FFE300C8A828 /* grid_status_core */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8276E88E29F7FFE300C8A828 /* XCRemoteSwiftPackageReference "grid_status_core" */;
 			productName = grid_status_core;
 		};
 /* End XCSwiftPackageProductDependency section */

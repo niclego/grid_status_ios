@@ -1,5 +1,6 @@
 // https://www.hackingwithswift.com/quick-start/swiftui/how-to-use-programmatic-navigation-in-swiftui
 
+import grid_status_common_ui
 import SwiftUI
 
 struct Dashboard: View {
@@ -9,7 +10,6 @@ struct Dashboard: View {
 
     var body: some View {
         VStack {
-
             HStack {
                 Text("Gridstatus.io").font(.title)
                     .foregroundColor(GridStatusColor.dataText.color(scheme: colorScheme))
@@ -29,7 +29,7 @@ struct Dashboard: View {
                 ScrollView {
                     VStack(spacing: 12) {
                         ForEach(vm.isos) { iso in
-                            DetailsCard(iso: iso)
+                            ISODetailsCard(iso: iso)
                                 .onTapGesture {
                                     vm.selectedIso = iso
                                 }
@@ -44,10 +44,13 @@ struct Dashboard: View {
         .onAppear {
             vm.subscribe()
         }
+        .onDisappear {
+            vm.unsubscribe()
+        }
         .sheet(item: $vm.selectedIso, content: { iso in
             ChartsContainer(iso: iso)
                 .padding()
-                .presentationBackground(GridStatusColor.dashboardBackground.color(scheme: colorScheme).opacity(0.97))
+                .presentationBackground(GridStatusColor.dashboardBackground.color(scheme: colorScheme))
         })
         .environmentObject(vm)
     }

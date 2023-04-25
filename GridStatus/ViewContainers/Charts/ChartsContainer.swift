@@ -1,3 +1,4 @@
+import grid_status_common_ui
 import SwiftUI
 
 struct ChartsContainer: View {
@@ -8,7 +9,7 @@ struct ChartsContainer: View {
     var body: some View {
         ScrollView {
             VStack {
-                DetailsCard(iso: iso)
+                ISODetailsCard(iso: iso)
 
                 Spacer()
                 
