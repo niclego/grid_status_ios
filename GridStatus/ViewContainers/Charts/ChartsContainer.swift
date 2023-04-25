@@ -9,7 +9,7 @@ struct ChartsContainer: View {
     var body: some View {
         ScrollView {
             VStack {
-                ISODetailsCard(iso: iso)
+                ISODetailsCard(iso: vm.selectedIso ?? iso)
 
                 Spacer()
                 

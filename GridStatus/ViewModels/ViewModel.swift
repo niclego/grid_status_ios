@@ -18,7 +18,7 @@ class ViewModel: ObservableObject {
     
     // MARK: - Lifecycle
     init(
-        core: CoreProtocol = Core(networkManager: NetworkManagerMock())
+        core: CoreProtocol = Core(networkManager: NetworkManager(apiKey: "939aa86d1b46813c99b1ff057627069a"))
     ) {
         self.core = core
     }
@@ -47,7 +47,7 @@ class ViewModel: ObservableObject {
                 }
 
                 for try await isosResponse in stream {
-                    print("[Recieved stream response")
+                    print("[Recieved stream response]")
                     await publish(isosResponse: isosResponse)
                 }
             } catch {
@@ -73,7 +73,13 @@ class ViewModel: ObservableObject {
         if isos.isEmpty {
             self.loadingState = .error
         } else {
-            self.isos = isos.map { ViewModel.dataToViewItem(iso: $0) }
+            let isoViewItems = isos.map { ViewModel.dataToViewItem(iso: $0) }
+            self.isos = isoViewItems
+            
+            if let selectedIso = selectedIso {
+                self.selectedIso = isoViewItems.first(where: { $0.id == selectedIso.id })
+            }
+
             self.loadingState = .loaded
         }
     }
