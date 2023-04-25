@@ -33,7 +33,9 @@ struct DashboardContainer: View {
         .onDisappear {
             vm.unsubscribe()
         }
-        .sheet(item: $vm.selectedIso, content: { iso in
+        .sheet(item: $vm.selectedIso, onDismiss: {
+            vm.selectedIso = nil
+        }, content: { iso in
             ChartsContainer(iso: iso)
                 .padding()
                 .presentationBackground(GridStatusColor.dashboardBackground.color(scheme: colorScheme))

@@ -18,7 +18,7 @@ class ViewModel: ObservableObject {
     
     // MARK: - Lifecycle
     init(
-        core: CoreProtocol = Core(networkManager: NetworkManager(apiKey: "939aa86d1b46813c99b1ff057627069a"))
+        core: CoreProtocol = Core(networkManager: NetworkManagerMock())
     ) {
         self.core = core
     }
