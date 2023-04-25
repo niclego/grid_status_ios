@@ -6,7 +6,7 @@ import grid_status_core
 class ViewModel: ObservableObject {
     
     // MARK: - Published
-    @Published var loadingState: LoadableContent.LoadingState = .error
+    @Published var loadingState: LoadableContent.LoadingState = .noData
     @Published var isos = [ISOViewItem]()
     @Published var selectedIso: ISOViewItem? = nil
     
