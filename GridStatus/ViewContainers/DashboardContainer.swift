@@ -3,7 +3,7 @@
 import grid_status_common_ui
 import SwiftUI
 
-struct Dashboard: View {
+struct DashboardContainer: View {
     @Environment(\.colorScheme) var colorScheme
 
     @StateObject var vm: ViewModel
@@ -11,31 +11,17 @@ struct Dashboard: View {
     var body: some View {
         VStack {
             HStack {
-                Text("Gridstatus.io").font(.title)
-                    .foregroundColor(GridStatusColor.dataText.color(scheme: colorScheme))
-                    .fontWeight(.bold)
+                GridStatusHeaderView()
                 Spacer()
             }.padding([.top, .leading], 12)
             
             Spacer()
             
             LoadableContent.ContainerView(loadingState: vm.loadingState) {
-                VStack {
-                    Text("The was an error while connecting to Gridstatus.io")
-                    Button("Retry", action: vm.subscribe)
-                        .buttonStyle(.bordered)
-                }
+                ErrorRetryView(retryAction: vm.subscribe)
             } content: {
-                ScrollView {
-                    VStack(spacing: 12) {
-                        ForEach(vm.isos) { iso in
-                            ISODetailsCard(iso: iso)
-                                .onTapGesture {
-                                    vm.selectedIso = iso
-                                }
-                        }
-                    }
-                    .padding(12)
+                ISOCardList(isos: vm.isos) { iso in
+                    vm.selectedIso = iso
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -58,7 +44,7 @@ struct Dashboard: View {
 
 struct Dashboard_Previews: PreviewProvider {
     static var previews: some View {
-        Dashboard(
+        DashboardContainer(
             vm: ViewModel()
         )
     }

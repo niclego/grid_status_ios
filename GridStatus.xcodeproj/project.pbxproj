@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		822EAA0F29F5843600243ED6 /* GridStatusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822EAA0E29F5843600243ED6 /* GridStatusApp.swift */; };
-		822EAA1129F5843600243ED6 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822EAA1029F5843600243ED6 /* Dashboard.swift */; };
+		822EAA1129F5843600243ED6 /* DashboardContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822EAA1029F5843600243ED6 /* DashboardContainer.swift */; };
 		822EAA1329F5843700243ED6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 822EAA1229F5843700243ED6 /* Assets.xcassets */; };
 		822EAA1729F5843700243ED6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 822EAA1629F5843700243ED6 /* Preview Assets.xcassets */; };
 		822EAA2129F5843700243ED6 /* ISOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822EAA2029F5843700243ED6 /* ISOTests.swift */; };
@@ -43,7 +43,7 @@
 /* Begin PBXFileReference section */
 		822EAA0B29F5843600243ED6 /* GridStatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GridStatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		822EAA0E29F5843600243ED6 /* GridStatusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridStatusApp.swift; sourceTree = "<group>"; };
-		822EAA1029F5843600243ED6 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
+		822EAA1029F5843600243ED6 /* DashboardContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardContainer.swift; sourceTree = "<group>"; };
 		822EAA1229F5843700243ED6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		822EAA1429F5843700243ED6 /* GridStatus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GridStatus.entitlements; sourceTree = "<group>"; };
 		822EAA1629F5843700243ED6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -191,7 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				822EAA5429F5C80000243ED6 /* Charts */,
-				822EAA1029F5843600243ED6 /* Dashboard.swift */,
+				822EAA1029F5843600243ED6 /* DashboardContainer.swift */,
 			);
 			path = ViewContainers;
 			sourceTree = "<group>";
@@ -345,7 +345,7 @@
 			files = (
 				822EAA4229F5A1BA00243ED6 /* DateFormatters.swift in Sources */,
 				822EAA4929F5ACF300243ED6 /* ViewModel.swift in Sources */,
-				822EAA1129F5843600243ED6 /* Dashboard.swift in Sources */,
+				822EAA1129F5843600243ED6 /* DashboardContainer.swift in Sources */,
 				822EAA5629F5C81800243ED6 /* ChartsContainer.swift in Sources */,
 				822EAA0F29F5843600243ED6 /* GridStatusApp.swift in Sources */,
 			);

@@ -12,7 +12,7 @@ struct GridStatusApp: App {
 
     var body: some Scene {
         WindowGroup {
-            Dashboard(vm: ViewModel())
+            DashboardContainer(vm: ViewModel())
         }
     }
 }
