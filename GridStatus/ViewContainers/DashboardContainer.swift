@@ -28,10 +28,21 @@ struct DashboardContainer: View {
         }
         .background(GridStatusColor.dashboardBackground.color(scheme: colorScheme))
         .onAppear {
-            vm.subscribe()
+            Task {
+                await vm.getIsos()
+                vm.subscribe()
+            }
         }
         .onDisappear {
             vm.unsubscribe()
+        }
+        .refreshable {
+            vm.unsubscribe()
+            
+            Task {
+                await vm.getIsos()
+                vm.subscribe()
+            }
         }
         .sheet(item: $vm.selectedIso, onDismiss: {
             vm.selectedIso = nil

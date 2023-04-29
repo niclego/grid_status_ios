@@ -16,9 +16,16 @@ class ViewModel: ObservableObject {
     // MARK: - Variables
     private var fetchIsosInProgress = false
     
+    // MARK: - Requests
+    private var getIsosRequest: GetISOsLatestRequest.Action {
+        return core.requestGenerator(
+            request: GetISOsLatestRequest()
+        )
+    }
+    
     // MARK: - Lifecycle
     init(
-        core: CoreProtocol = Core(networkManager: NetworkManagerMock())
+        core: CoreProtocol = Core(networkManager: NetworkManager(apiKey: "939aa86d1b46813c99b1ff057627069a"))
     ) {
         self.core = core
     }
@@ -26,29 +33,28 @@ class ViewModel: ObservableObject {
     // MARK: - Networking
     var task: Task<(), Error>?
     
+    func getIsos() async {
+        await publish(state: .loading)
+        
+        do {
+            let response = try await getIsosRequest()
+            try await publish(response: response)
+            await publish(state: .loaded)
+        } catch {
+            await publish(state: .error)
+        }
+    }
+
     func subscribe() {
-        unsubscribe()
-
-        let getISOsLatest: GetISOsLatestRequest.Action = core.requestGenerator(
-            request: GetISOsLatestRequest()
-        )
-
         let stream = core.streamGenerator(
             sleeper: Sleeper(durationInSeconds: 60),
-            action: getISOsLatest
+            action: getIsosRequest
         )
         
         task = Task {
             do {
-                if loadingState == .noData || loadingState == .error {
-                    await publish(state: .loading)
-                    let isosResponse = try await getISOsLatest()
-                    await publish(isosResponse: isosResponse)
-                }
-
                 for try await isosResponse in stream {
-                    print("[Recieved stream response]")
-                    await publish(isosResponse: isosResponse)
+                    try await publish(response: isosResponse)
                 }
             } catch {
                 await publish(state: .error)
@@ -67,21 +73,21 @@ class ViewModel: ObservableObject {
     }
     
     @MainActor
-    private func publish(isosResponse: ISOLatestResponse) {
-        let isos = isosResponse.data
+    private func publish(response: ISOLatestResponse) throws {
+        guard !response.data.isEmpty else { throw GridStatusError.noIsosData }
+        let isos = response.data.map { ViewModel.dataToViewItem(iso: $0) }
+        self.isos = isos
         
-        if isos.isEmpty {
-            self.loadingState = .error
-        } else {
-            let isoViewItems = isos.map { ViewModel.dataToViewItem(iso: $0) }
-            self.isos = isoViewItems
-            
-            if let selectedIso = selectedIso {
-                self.selectedIso = isoViewItems.first(where: { $0.id == selectedIso.id })
-            }
-
-            self.loadingState = .loaded
+        if let selectedIso = selectedIso,
+           let newSelectedIso = isos.first(where: { $0.id == selectedIso.id })
+        {
+            publish(selectedIso: newSelectedIso)
         }
+    }
+    
+    @MainActor
+    private func publish(selectedIso: ISOViewItem) {
+        self.selectedIso = selectedIso
     }
 }
 
