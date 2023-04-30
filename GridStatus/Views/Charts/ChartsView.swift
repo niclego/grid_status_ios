@@ -1,15 +1,15 @@
 import grid_status_common_ui
 import SwiftUI
 
-struct ChartsContainer: View {
-    @EnvironmentObject var vm: ViewModel
+struct ChartsView: View {
+    @EnvironmentObject var appState: AppState
     
     let iso: ISOViewItem
 
     var body: some View {
         ScrollView {
             VStack {
-                ISODetailsCard(iso: vm.selectedIso ?? iso)
+                ISODetailsCard(iso: iso)
 
                 Spacer()
                 
@@ -19,9 +19,9 @@ struct ChartsContainer: View {
     }
 }
 
-struct ChartsContainer_Previews: PreviewProvider {
+struct ChartsView_Previews: PreviewProvider {
     static var previews: some View {
-        ChartsContainer(iso: ISOViewItem.example)
-            .environmentObject(ViewModel()).padding()
+        ChartsView(iso: ISOViewItem.example)
+            .environmentObject(AppState()).padding()
     }
 }

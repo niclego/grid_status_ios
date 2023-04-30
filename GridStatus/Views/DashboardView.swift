@@ -3,10 +3,13 @@
 import grid_status_common_ui
 import SwiftUI
 
-struct DashboardContainer: View {
+struct DashboardView: View {
     @Environment(\.colorScheme) var colorScheme
 
-    @StateObject var vm: ViewModel
+    @StateObject var appState: AppState
+    
+    @State var selectedIso: ISOViewItem? = nil
+    @State var loadingState: LoadableContent.LoadingState = .noData
 
     var body: some View {
         VStack {
@@ -17,48 +20,44 @@ struct DashboardContainer: View {
             
             Spacer()
             
-            LoadableContent.ContainerView(loadingState: vm.loadingState) {
-                ErrorRetryView(retryAction: vm.subscribe)
+            LoadableContent.ContainerView(loadingState: loadingState) {
+                ErrorRetryView (
+                    retryAction: {}
+                )
             } content: {
-                ISOCardList(isos: vm.isos) { iso in
-                    vm.selectedIso = iso
+                ISOCardList(isos: appState.isos) { iso in
+                    selectedIso = iso
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
         .background(GridStatusColor.dashboardBackground.color(scheme: colorScheme))
         .onAppear {
+            loadingState = .loading
             Task {
-                await vm.getIsos()
-                vm.subscribe()
+                try await appState.fetchIsos()
+                loadingState = .loaded
+                try await appState.subscribe()
             }
-        }
-        .onDisappear {
-            vm.unsubscribe()
         }
         .refreshable {
-            vm.unsubscribe()
-            
             Task {
-                await vm.getIsos()
-                vm.subscribe()
+                try await appState.fetchIsos()
             }
         }
-        .sheet(item: $vm.selectedIso, onDismiss: {
-            vm.selectedIso = nil
-        }, content: { iso in
-            ChartsContainer(iso: iso)
+        .sheet(item: $selectedIso) { iso in
+            ChartsView(iso: iso)
                 .padding()
                 .presentationBackground(GridStatusColor.dashboardBackground.color(scheme: colorScheme))
-        })
-        .environmentObject(vm)
+        }
+        .environmentObject(appState)
     }
 }
 
 struct Dashboard_Previews: PreviewProvider {
     static var previews: some View {
-        DashboardContainer(
-            vm: ViewModel()
+        DashboardView(
+            appState: AppState()
         )
     }
 }

@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		820390E929FED0B500C9773F /* AppState+ISOInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820390E829FED0B500C9773F /* AppState+ISOInteraction.swift */; };
+		820390EC29FED2D400C9773F /* ISOViewItem+ISOInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820390EB29FED2D400C9773F /* ISOViewItem+ISOInit.swift */; };
 		822EAA0F29F5843600243ED6 /* GridStatusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822EAA0E29F5843600243ED6 /* GridStatusApp.swift */; };
-		822EAA1129F5843600243ED6 /* DashboardContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822EAA1029F5843600243ED6 /* DashboardContainer.swift */; };
+		822EAA1129F5843600243ED6 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822EAA1029F5843600243ED6 /* DashboardView.swift */; };
 		822EAA1329F5843700243ED6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 822EAA1229F5843700243ED6 /* Assets.xcassets */; };
 		822EAA1729F5843700243ED6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 822EAA1629F5843700243ED6 /* Preview Assets.xcassets */; };
 		822EAA2129F5843700243ED6 /* ISOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822EAA2029F5843700243ED6 /* ISOTests.swift */; };
@@ -17,8 +19,8 @@
 		822EAA3B29F584F700243ED6 /* isos_latest_query_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 822EAA3A29F584F700243ED6 /* isos_latest_query_response.json */; };
 		822EAA4229F5A1BA00243ED6 /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822EAA4129F5A1BA00243ED6 /* DateFormatters.swift */; };
 		822EAA4529F5A38800243ED6 /* DateFormattersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822EAA4429F5A38800243ED6 /* DateFormattersTests.swift */; };
-		822EAA4929F5ACF300243ED6 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822EAA4829F5ACF300243ED6 /* ViewModel.swift */; };
-		822EAA5629F5C81800243ED6 /* ChartsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822EAA5529F5C81800243ED6 /* ChartsContainer.swift */; };
+		822EAA4929F5ACF300243ED6 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822EAA4829F5ACF300243ED6 /* AppState.swift */; };
+		822EAA5629F5C81800243ED6 /* ChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822EAA5529F5C81800243ED6 /* ChartsView.swift */; };
 		8276E88D29F7FF2300C8A828 /* grid_status_common_ui in Frameworks */ = {isa = PBXBuildFile; productRef = 8276E88C29F7FF2300C8A828 /* grid_status_common_ui */; };
 		8276E89029F7FFE300C8A828 /* grid_status_core in Frameworks */ = {isa = PBXBuildFile; productRef = 8276E88F29F7FFE300C8A828 /* grid_status_core */; };
 /* End PBXBuildFile section */
@@ -41,9 +43,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		820390E829FED0B500C9773F /* AppState+ISOInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppState+ISOInteraction.swift"; sourceTree = "<group>"; };
+		820390EB29FED2D400C9773F /* ISOViewItem+ISOInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ISOViewItem+ISOInit.swift"; sourceTree = "<group>"; };
 		822EAA0B29F5843600243ED6 /* GridStatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GridStatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		822EAA0E29F5843600243ED6 /* GridStatusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridStatusApp.swift; sourceTree = "<group>"; };
-		822EAA1029F5843600243ED6 /* DashboardContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardContainer.swift; sourceTree = "<group>"; };
+		822EAA1029F5843600243ED6 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		822EAA1229F5843700243ED6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		822EAA1429F5843700243ED6 /* GridStatus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GridStatus.entitlements; sourceTree = "<group>"; };
 		822EAA1629F5843700243ED6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -55,8 +59,8 @@
 		822EAA3A29F584F700243ED6 /* isos_latest_query_response.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = isos_latest_query_response.json; sourceTree = "<group>"; };
 		822EAA4129F5A1BA00243ED6 /* DateFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatters.swift; sourceTree = "<group>"; };
 		822EAA4429F5A38800243ED6 /* DateFormattersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormattersTests.swift; sourceTree = "<group>"; };
-		822EAA4829F5ACF300243ED6 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		822EAA5529F5C81800243ED6 /* ChartsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsContainer.swift; sourceTree = "<group>"; };
+		822EAA4829F5ACF300243ED6 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		822EAA5529F5C81800243ED6 /* ChartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		820390EA29FED1F300C9773F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				820390EB29FED2D400C9773F /* ISOViewItem+ISOInit.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		822EAA0229F5843600243ED6 = {
 			isa = PBXGroup;
 			children = (
@@ -109,9 +121,9 @@
 		822EAA0D29F5843600243ED6 /* GridStatus */ = {
 			isa = PBXGroup;
 			children = (
+				822EAA4729F5ACC300243ED6 /* AppState */,
 				822EAA4629F5A99100243ED6 /* Utilities */,
-				822EAA4C29F5C34500243ED6 /* ViewContainers */,
-				822EAA4729F5ACC300243ED6 /* ViewModels */,
+				822EAA4C29F5C34500243ED6 /* Views */,
 				822EAA0E29F5843600243ED6 /* GridStatusApp.swift */,
 				822EAA1229F5843700243ED6 /* Assets.xcassets */,
 				822EAA1429F5843700243ED6 /* GridStatus.entitlements */,
@@ -174,32 +186,34 @@
 		822EAA4629F5A99100243ED6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				820390EA29FED1F300C9773F /* Extensions */,
 				822EAA4129F5A1BA00243ED6 /* DateFormatters.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		822EAA4729F5ACC300243ED6 /* ViewModels */ = {
+		822EAA4729F5ACC300243ED6 /* AppState */ = {
 			isa = PBXGroup;
 			children = (
-				822EAA4829F5ACF300243ED6 /* ViewModel.swift */,
+				822EAA4829F5ACF300243ED6 /* AppState.swift */,
+				820390E829FED0B500C9773F /* AppState+ISOInteraction.swift */,
 			);
-			path = ViewModels;
+			path = AppState;
 			sourceTree = "<group>";
 		};
-		822EAA4C29F5C34500243ED6 /* ViewContainers */ = {
+		822EAA4C29F5C34500243ED6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				822EAA5429F5C80000243ED6 /* Charts */,
-				822EAA1029F5843600243ED6 /* DashboardContainer.swift */,
+				822EAA1029F5843600243ED6 /* DashboardView.swift */,
 			);
-			path = ViewContainers;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		822EAA5429F5C80000243ED6 /* Charts */ = {
 			isa = PBXGroup;
 			children = (
-				822EAA5529F5C81800243ED6 /* ChartsContainer.swift */,
+				822EAA5529F5C81800243ED6 /* ChartsView.swift */,
 			);
 			path = Charts;
 			sourceTree = "<group>";
@@ -344,9 +358,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				822EAA4229F5A1BA00243ED6 /* DateFormatters.swift in Sources */,
-				822EAA4929F5ACF300243ED6 /* ViewModel.swift in Sources */,
-				822EAA1129F5843600243ED6 /* DashboardContainer.swift in Sources */,
-				822EAA5629F5C81800243ED6 /* ChartsContainer.swift in Sources */,
+				822EAA4929F5ACF300243ED6 /* AppState.swift in Sources */,
+				820390E929FED0B500C9773F /* AppState+ISOInteraction.swift in Sources */,
+				820390EC29FED2D400C9773F /* ISOViewItem+ISOInit.swift in Sources */,
+				822EAA1129F5843600243ED6 /* DashboardView.swift in Sources */,
+				822EAA5629F5C81800243ED6 /* ChartsView.swift in Sources */,
 				822EAA0F29F5843600243ED6 /* GridStatusApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
