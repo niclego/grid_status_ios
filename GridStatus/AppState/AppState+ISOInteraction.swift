@@ -7,7 +7,7 @@ extension AppState {
     }
 
     // MARK: - Requests
-    private var getIsosRequest: GetISOsLatestRequest.Action {
+    private var getIsosRequest: () async throws -> ISOLatestResponse {
         return core.requestGenerator (
             request: GetISOsLatestRequest()
         )
