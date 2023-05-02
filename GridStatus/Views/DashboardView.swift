@@ -16,7 +16,7 @@ struct DashboardView: View {
             HStack {
                 GridStatusHeaderView()
                 Spacer()
-            }.padding([.top, .leading], 12)
+            }.padding([.top, .leading])
             
             Spacer()
             
