@@ -1,5 +1,5 @@
-import grid_status_core
-import grid_status_common_ui
+import Core
+import GridStatusCommonUI
 
 extension ISOViewItem {
     init(iso: ISO) {

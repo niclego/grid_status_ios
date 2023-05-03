@@ -1,6 +1,6 @@
 // https://www.hackingwithswift.com/quick-start/swiftui/how-to-use-programmatic-navigation-in-swiftui
 
-import grid_status_common_ui
+import GridStatusCommonUI
 import SwiftUI
 
 struct DashboardView: View {

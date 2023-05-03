@@ -1,4 +1,4 @@
-import grid_status_common_ui
+import GridStatusCommonUI
 import Combine
 
 class AppState: ObservableObject {

@@ -8,7 +8,7 @@
 import WidgetKit
 import SwiftUI
 import Intents
-import grid_status_common_ui
+import GridStatusCommonUI
 
 struct Provider: IntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
