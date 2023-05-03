@@ -7,27 +7,27 @@ extension AppState {
     }
 
     // MARK: - Requests
-    private var getIsosRequest: () async throws -> ISOLatestResponse {
+    private var getIsoDetails: () async throws -> ISODetailsResponse {
         return core.requestGenerator (
-            request: GetISOsLatestRequest()
+            request: GetISODetailsRequest()
         )
     }
 
-    private var stream: AsyncThrowingStream<ISOLatestResponse, Error> {
+    private var stream: AsyncThrowingStream<ISODetailsResponse, Error> {
         return core.streamGenerator (
             sleeper: Sleeper(durationInSeconds: 60),
-            action: getIsosRequest
+            action: getIsoDetails
         )
     }
     
-    // MARK: - AppState Interacors
+    // MARK: - ISO Details Interacors
 
-    private func isosFrom(_ response: ISOLatestResponse) -> [ISOViewItem] {
+    private func isosFrom(_ response: ISODetailsResponse) -> [ISOViewItem] {
         response.data.map { .init(iso: $0) }
     }
     
     func fetchIsos() async throws {
-        let resp = try await getIsosRequest()
+        let resp = try await getIsoDetails()
         guard !resp.data.isEmpty else { throw GridStatusError.noIsosData }
         await publish(isos: isosFrom(resp))
     }

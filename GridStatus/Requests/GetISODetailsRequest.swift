@@ -1,10 +1,10 @@
 import Core
 
-public struct GetISOsLatestRequest: Requestable {
+public struct GetISODetailsRequest: Requestable {
     public init() {}
 
-    public var responseMock: ISOLatestResponse {
-        ISOLatestResponse.example
+    public var responseMock: ISODetailsResponse {
+        ISODetailsResponse.example
     }
 
     public let httpMethod = NetworkManager.HttpMethod.get.method

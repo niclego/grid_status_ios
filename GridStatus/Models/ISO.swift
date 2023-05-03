@@ -37,7 +37,7 @@ public struct ISO: Decodable {
     }
 }
 
-public struct ISOLatestResponse: Decodable {
+public struct ISODetailsResponse: Decodable {
     public let data: [ISO]
     let statusCode: Int
     
@@ -47,13 +47,13 @@ public struct ISOLatestResponse: Decodable {
     }
 }
 
-extension ISOLatestResponse {
-    public static let example: ISOLatestResponse = {
+extension ISODetailsResponse {
+    public static let example: ISODetailsResponse = {
         if let path = Bundle.main.path(forResource: "isos_latest_query_response", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                let isoResponse = try JSONDecoder().decode(ISOLatestResponse.self, from: data)
-                return isoResponse
+                let resp = try JSONDecoder().decode(ISODetailsResponse.self, from: data)
+                return resp
             } catch {
                 return .init(data: [], statusCode: 400)
             }

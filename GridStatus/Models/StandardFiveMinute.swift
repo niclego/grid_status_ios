@@ -44,8 +44,8 @@ extension StandardFiveMinute {
         if let path = Bundle.main.path(forResource: "nyiso_standardized_5_min_response", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                let isoResponse = try JSONDecoder().decode(StandardFiveMinuteResponse.self, from: data)
-                return isoResponse
+                let resp = try JSONDecoder().decode(StandardFiveMinuteResponse.self, from: data)
+                return resp
             } catch {
                 return .init(data: [], statusCode: 400)
             }
