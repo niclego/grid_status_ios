@@ -35,7 +35,7 @@ struct GridStatusWidgetEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
-        ISODetailsCard(iso: ISOViewItem.example)
+        StackedAreaChartCard(config: .example)
     }
 }
 

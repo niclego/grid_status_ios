@@ -42,7 +42,7 @@ struct DashboardView: View {
             .navigationDestination(for: Int.self) { i in
                 DetailsView(isoId: appState.isos[i].id)
                     .padding()
-                    .presentationBackground(GridStatusColor.dashboardBackground.color(scheme: colorScheme))
+                    .background(GridStatusColor.dashboardBackground.color(scheme: colorScheme))
                     .presentationDragIndicator(.visible)
             }
         }
@@ -51,7 +51,7 @@ struct DashboardView: View {
             Task {
                 try await appState.fetchIsos()
                 loadingState = .loaded
-                try await appState.subscribeToIsos()
+//                try await appState.subscribeToIsos()
             }
         }
         .environmentObject(appState)
