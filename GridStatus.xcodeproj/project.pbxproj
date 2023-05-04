@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		820390E929FED0B500C9773F /* AppState+ISODetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820390E829FED0B500C9773F /* AppState+ISODetails.swift */; };
+		820390E929FED0B500C9773F /* AppState+isos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820390E829FED0B500C9773F /* AppState+isos.swift */; };
 		820390EC29FED2D400C9773F /* ISOViewItem+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820390EB29FED2D400C9773F /* ISOViewItem+ext.swift */; };
 		820D31F72A02C4E600A2928B /* GridStatusCommonUI in Frameworks */ = {isa = PBXBuildFile; productRef = 820D31F62A02C4E600A2928B /* GridStatusCommonUI */; };
 		820D31F92A02C52C00A2928B /* GridStatusCommonUI in Frameworks */ = {isa = PBXBuildFile; productRef = 820D31F82A02C52C00A2928B /* GridStatusCommonUI */; };
 		820D31FC2A02C74200A2928B /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 820D31FB2A02C74200A2928B /* Core */; };
 		820D31FE2A02E89A00A2928B /* GetFiveMinDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820D31FD2A02E89A00A2928B /* GetFiveMinDataRequest.swift */; };
 		820D32002A03194800A2928B /* StackedAreaChartItem+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820D31FF2A03194800A2928B /* StackedAreaChartItem+ext.swift */; };
+		822633532A035E70005D004A /* AppState+chartConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822633522A035E70005D004A /* AppState+chartConfig.swift */; };
 		822EAA0F29F5843600243ED6 /* GridStatusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822EAA0E29F5843600243ED6 /* GridStatusApp.swift */; };
 		822EAA1129F5843600243ED6 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822EAA1029F5843600243ED6 /* DashboardView.swift */; };
 		822EAA1329F5843700243ED6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 822EAA1229F5843700243ED6 /* Assets.xcassets */; };
@@ -80,10 +81,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		820390E829FED0B500C9773F /* AppState+ISODetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppState+ISODetails.swift"; sourceTree = "<group>"; };
+		820390E829FED0B500C9773F /* AppState+isos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppState+isos.swift"; sourceTree = "<group>"; };
 		820390EB29FED2D400C9773F /* ISOViewItem+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ISOViewItem+ext.swift"; sourceTree = "<group>"; };
 		820D31FD2A02E89A00A2928B /* GetFiveMinDataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFiveMinDataRequest.swift; sourceTree = "<group>"; };
 		820D31FF2A03194800A2928B /* StackedAreaChartItem+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StackedAreaChartItem+ext.swift"; sourceTree = "<group>"; };
+		822633522A035E70005D004A /* AppState+chartConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppState+chartConfig.swift"; sourceTree = "<group>"; };
 		822EAA0B29F5843600243ED6 /* GridStatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GridStatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		822EAA0E29F5843600243ED6 /* GridStatusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridStatusApp.swift; sourceTree = "<group>"; };
 		822EAA1029F5843600243ED6 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
@@ -264,7 +266,8 @@
 			isa = PBXGroup;
 			children = (
 				822EAA4829F5ACF300243ED6 /* AppState.swift */,
-				820390E829FED0B500C9773F /* AppState+ISODetails.swift */,
+				820390E829FED0B500C9773F /* AppState+isos.swift */,
+				822633522A035E70005D004A /* AppState+chartConfig.swift */,
 			);
 			path = AppState;
 			sourceTree = "<group>";
@@ -497,9 +500,10 @@
 				820D32002A03194800A2928B /* StackedAreaChartItem+ext.swift in Sources */,
 				82CF874829FF098500DB974C /* GridStatusWidget.intentdefinition in Sources */,
 				822EAA4229F5A1BA00243ED6 /* DateFormatters.swift in Sources */,
+				822633532A035E70005D004A /* AppState+chartConfig.swift in Sources */,
 				820D31FE2A02E89A00A2928B /* GetFiveMinDataRequest.swift in Sources */,
 				822EAA4929F5ACF300243ED6 /* AppState.swift in Sources */,
-				820390E929FED0B500C9773F /* AppState+ISODetails.swift in Sources */,
+				820390E929FED0B500C9773F /* AppState+isos.swift in Sources */,
 				82918E072A00B1DA006F4D7B /* ISO.swift in Sources */,
 				820390EC29FED2D400C9773F /* ISOViewItem+ext.swift in Sources */,
 				822EAA1129F5843600243ED6 /* DashboardView.swift in Sources */,

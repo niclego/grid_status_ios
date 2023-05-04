@@ -17,6 +17,7 @@ struct StandardFiveMinute: Decodable, Identifiable {
     let oil: Double?
     let other: Double?
     let solar: Double?
+    let btmSolar: Double?
     let wind: Double?
     
     var id: String { startUTC }
@@ -38,6 +39,7 @@ struct StandardFiveMinute: Decodable, Identifiable {
         case oil = "fuel_mix.oil"
         case other = "fuel_mix.other"
         case solar = "fuel_mix.solar"
+        case btmSolar = "btm_solar.btm_solar"
         case wind = "fuel_mix.wind"
     }
 }
