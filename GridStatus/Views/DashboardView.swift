@@ -37,7 +37,7 @@ struct DashboardView: View {
             Task {
                 try await appState.fetchIsos()
                 loadingState = .loaded
-                try await appState.subscribe()
+                try await appState.subscribeToIsos()
             }
         }
         .refreshable {
@@ -46,7 +46,7 @@ struct DashboardView: View {
             }
         }
         .sheet(item: $selectedIso) { iso in
-            ChartsView(iso: iso)
+            DetailsView(isoId: iso.id)
                 .padding()
                 .presentationBackground(GridStatusColor.dashboardBackground.color(scheme: colorScheme))
         }

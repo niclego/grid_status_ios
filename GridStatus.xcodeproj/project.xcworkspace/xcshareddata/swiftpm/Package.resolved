@@ -6,7 +6,7 @@
       "location" : "https://github.com/niclego/Core.git",
       "state" : {
         "branch" : "develop",
-        "revision" : "da656c87be6a20f744b4edf6242a52584eece70f"
+        "revision" : "fab2ccdb5cf60911999ce97ff0ddc2f6750d1033"
       }
     },
     {
@@ -15,7 +15,7 @@
       "location" : "https://github.com/niclego/GridStatusCommonUI.git",
       "state" : {
         "branch" : "develop",
-        "revision" : "d8d08902a0332c67f4f1daf09d05d58868fe477f"
+        "revision" : "b55573b03b911173de0a57e1c774527c17ee941b"
       }
     }
   ],

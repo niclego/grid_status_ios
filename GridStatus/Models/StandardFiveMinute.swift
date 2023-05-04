@@ -2,29 +2,42 @@ import Foundation
 
 struct StandardFiveMinute: Decodable, Identifiable {
     let startUTC: String
-    let dualFuel: Double?
+
+    let batteries: Double?
+    let biomass: Double?
+    let coal: Double?
+    let coalAndLignite: Double?
+    let duelFuel: Double?
+    let geothermal: Double?
+    let imports: Double?
     let hydro: Double?
-    let natural_gas: Double?
+    let largeHydro: Double?
+    let naturalGas: Double?
     let nuclear: Double?
-    let otherFossilFuels: Double?
-    let otherRenewables: Double?
+    let oil: Double?
+    let other: Double?
+    let solar: Double?
     let wind: Double?
     
     var id: String { startUTC }
     
-    func loadInGW(load: Double?) -> Double {
-        guard let load = load else { return 0 }
-        return load / 1000
-    }
-    
     enum CodingKeys: String, CodingKey {
         case startUTC = "interval_start_utc"
-        case dualFuel = "fuel_mix.dual_fuel"
+
+        case batteries = "fuel_mix.batteries"
+        case biomass = "fuel_mix.biomass"
+        case coal = "fuel_mix.coal"
+        case coalAndLignite = "fuel_mix.coal_and_lignite"
+        case duelFuel = "fuel_mix.dual_fuel"
+        case geothermal = "fuel_mix.geothermal"
+        case imports = "fuel_mix.imports"
         case hydro = "fuel_mix.hydro"
-        case natural_gas = "fuel_mix.natural_gas"
+        case largeHydro = "fuel_mix.large_hydro"
+        case naturalGas = "fuel_mix.natural_gas"
         case nuclear = "fuel_mix.nuclear"
-        case otherFossilFuels = "fuel_mix.other_fossil_fuels"
-        case otherRenewables = "fuel_mix.other_renewables"
+        case oil = "fuel_mix.oil"
+        case other = "fuel_mix.other"
+        case solar = "fuel_mix.solar"
         case wind = "fuel_mix.wind"
     }
 }
@@ -39,9 +52,9 @@ public struct StandardFiveMinuteResponse: Decodable {
     }
 }
 
-extension StandardFiveMinute {
+extension StandardFiveMinuteResponse {
     static let example: StandardFiveMinuteResponse = {
-        if let path = Bundle.main.path(forResource: "nyiso_standardized_5_min_response", ofType: "json") {
+        if let path = Bundle.main.path(forResource: "caiso_standardized_5_min_response", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 let resp = try JSONDecoder().decode(StandardFiveMinuteResponse.self, from: data)
