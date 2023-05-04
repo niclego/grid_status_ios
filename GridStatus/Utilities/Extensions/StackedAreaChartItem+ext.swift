@@ -18,6 +18,7 @@ extension StackedAreaChartItem {
             nuclear: data.nuclear,
             oil: data.oil,
             other: data.oil,
+            btmSolar: data.btmSolar,
             solar: data.solar,
             wind: data.wind
         )
