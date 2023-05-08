@@ -13,46 +13,49 @@ struct DashboardView: View {
     @State private var presentedNumbers = [Int]()
     
     var body: some View {
-        NavigationStack(path: $presentedNumbers) {
-            VStack {
-                HStack {
-                    GridStatusHeaderView()
-                    Spacer()
-                }.padding([.top, .leading])
-
+        VStack {
+            HStack {
+                GridStatusHeaderView()
                 Spacer()
-
-                LoadableContent.ContainerView(loadingState: loadingState) {
-                    ErrorRetryView (
-                        retryAction: {}
-                    )
-                } content: {
-                    ISOCardList(isos: appState.isos) { isoIndex in
-                        presentedNumbers.append(isoIndex)
-                    }
-                    .refreshable {
-                        Task {
-                            try await appState.fetchIsos()
-                        }
+            }.padding([.top, .leading])
+            
+            Spacer()
+            
+            LoadableContent.ContainerView(loadingState: loadingState) {
+                ErrorRetryView (
+                    retryAction: {}
+                )
+            } content: {
+                ISOCardList(isos: appState.isos) { iso in
+                    selectedIso = iso
+                }
+                .refreshable {
+                    Task {
+                        try await appState.fetchIsos()
                     }
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
-            .background(GridStatusColor.dashboardBackground.color(scheme: colorScheme))
-            .navigationDestination(for: Int.self) { i in
-                DetailsView(isoId: appState.isos[i].id)
-                    .padding()
-                    .background(GridStatusColor.dashboardBackground.color(scheme: colorScheme))
-                    .presentationDragIndicator(.visible)
-            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
+        .background(GridStatusColor.dashboardBackground.color(scheme: colorScheme))
         .onAppear {
             loadingState = .loading
             Task {
-                try await appState.fetchIsos()
-                loadingState = .loaded
-//                try await appState.subscribeToIsos()
+                do {
+                    try await appState.fetchIsos()
+                    loadingState = .loaded
+                    
+                    // try await appState.subscribeToIsos()
+                } catch {
+                    print(error)
+                }
             }
+        }
+        .sheet(item: $selectedIso) { iso in
+            DetailsView(iso: iso)
+                .padding()
+                .presentationBackground(GridStatusColor.dashboardBackground.color(scheme: colorScheme))
+                .presentationDragIndicator(.visible)
         }
         .environmentObject(appState)
     }

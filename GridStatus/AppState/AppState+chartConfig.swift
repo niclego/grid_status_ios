@@ -12,13 +12,17 @@ extension AppState { // + chartConfig
 
     // MARK: - Five Minute Data Interactors
     private func areaChartConfig(from resp: StandardFiveMinuteResponse, and isoId: String) -> ChartConfig {
-        let items: [StackedAreaChartItem] = resp.data.enumerated()
-            .compactMap {
-                $0.offset.isMultiple(of: 1) ? .init(data: $0.element) : nil
-            }
+        let items: [StackedAreaChartItem] = resp.data.map { .init(data: $0) }
         let dataType: String = "Fuel Mix"
         
-        return ChartConfig(data: items, isoId: isoId, dataType: dataType)
+        return ChartConfig(
+            data: items,
+            isoId: isoId,
+            dataType: dataType,
+            showXAxis: true,
+            showYAxis: true,
+            showLegend: true
+        )
     }
 
     func fetchFiveMinData(isoId: String) async throws {

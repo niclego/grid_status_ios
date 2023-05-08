@@ -4,13 +4,13 @@ import SwiftUI
 struct DetailsView: View {
     @EnvironmentObject var appState: AppState
     
-    let isoId: String
+    let iso: ISOViewItem
 
     var body: some View {
         VStack {
             ScrollView {
                 VStack {
-                    if let iso = appState.isos.first(where: { $0.id == isoId }) {
+                    if let iso = appState.isos.first(where: { $0.id == iso.id }) {
                         ISODetailsCard(iso: iso)
                     } else {
                         LoadingCard()
@@ -30,7 +30,7 @@ struct DetailsView: View {
                 .onAppear {
                     Task {
                         do {
-                            try await appState.fetchFiveMinData(isoId: isoId)
+                            try await appState.fetchFiveMinData(isoId: iso.id)
                         } catch {
                             print(error)
                         }
@@ -48,7 +48,7 @@ struct DetailsView: View {
 
 struct DetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailsView(isoId: ISOViewItem.example.id)
+        DetailsView(iso: ISOViewItem.example)
             .environmentObject(
                 AppState()
             ).padding()

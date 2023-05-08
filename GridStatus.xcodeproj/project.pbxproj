@@ -115,6 +115,8 @@
 		82CF874329FF098400DB974C /* GridStatusWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = GridStatusWidget.intentdefinition; sourceTree = "<group>"; };
 		82CF874429FF098500DB974C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82CF874629FF098500DB974C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82D4CA422A0970380061D99F /* GridStatusCommonUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = GridStatusCommonUI; path = ../../GridStatusCommonUI; sourceTree = "<group>"; };
+		82D4CA432A0974D30061D99F /* Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Core; path = ../../Core; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 		822EAA0229F5843600243ED6 = {
 			isa = PBXGroup;
 			children = (
+				82D4CA412A09702D0061D99F /* LocalPackages */,
 				822EAA0D29F5843600243ED6 /* GridStatus */,
 				822EAA1F29F5843700243ED6 /* GridStatusTests */,
 				822EAA2929F5843700243ED6 /* GridStatusUITests */,
@@ -320,6 +323,15 @@
 				82CF874629FF098500DB974C /* Info.plist */,
 			);
 			path = GridStatusWidget;
+			sourceTree = "<group>";
+		};
+		82D4CA412A09702D0061D99F /* LocalPackages */ = {
+			isa = PBXGroup;
+			children = (
+				82D4CA432A0974D30061D99F /* Core */,
+				82D4CA422A0970380061D99F /* GridStatusCommonUI */,
+			);
+			path = LocalPackages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
