@@ -35,7 +35,7 @@ struct GridStatusWidgetEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
-        StackedAreaChartCard(config: .example)
+        StackedAreaChartCard(config: .example, timeZone: Date.timeZoneFor(isoId: "caiso") ?? .current)
     }
 }
 

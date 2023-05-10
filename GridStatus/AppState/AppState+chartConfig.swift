@@ -4,9 +4,13 @@ import GridStatusCommonUI
 extension AppState { // + chartConfig
 
     // MARK: - Requests
-    private func getFiveMinData(isoId: String) -> () async throws -> StandardFiveMinuteResponse {
+    private func getFiveMinData(isoId: String, startTime: String, endTime: String) -> () async throws -> StandardFiveMinuteResponse {
         return core.requestGenerator (
-            request: GetFiveMinDataRequest(isoId: isoId)
+            request: GetFiveMinDataRequest(
+                isoId: isoId,
+                startTime: startTime,
+                endTime: endTime
+            )
         )
     }
 
@@ -25,8 +29,13 @@ extension AppState { // + chartConfig
         )
     }
 
-    func fetchFiveMinData(isoId: String) async throws {
-        let resp = try await getFiveMinData(isoId: isoId)()
+    func fetchFiveMinData(isoId: String, startTimeUtc: String, endTimeUtc: String) async throws {
+        let resp = try await getFiveMinData(
+            isoId: isoId,
+            startTime: startTimeUtc,
+            endTime: endTimeUtc
+        )()
+
         guard !resp.data.isEmpty else { throw NetworkError.invalidResponse }
         let config = areaChartConfig(from: resp, and: isoId)
         await publish(chartConfig: config)
