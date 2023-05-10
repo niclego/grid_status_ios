@@ -4,11 +4,10 @@ import SwiftUI
 struct DetailsView: View {
     @EnvironmentObject var appState: AppState
 
-    @State var datas: [StackedAreaChartItem]
+    @State var datas: [StackedAreaChartItem] = []
 
-    init(iso: ISOViewItem, datas: [StackedAreaChartItem] = []) {
+    init(iso: ISOViewItem) {
         self.iso = iso
-        self.datas = datas
     }
 
     let iso: ISOViewItem
@@ -64,8 +63,7 @@ struct DetailsView: View {
 struct DetailsView_Previews: PreviewProvider {
     static var previews: some View {
         DetailsView(
-            iso: ISOViewItem.example,
-            datas: StandardFiveMinuteResponse.example.data.map { StackedAreaChartItem.init($0) }
+            iso: ISOViewItem.example
         )
             .environmentObject(
                 AppState()
