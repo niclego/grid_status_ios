@@ -7,6 +7,7 @@ struct StandardFiveMinute: Decodable, Identifiable {
     let duelFuel: Double?
     let geothermal: Double?
     let imports: Double?
+    let gas: Double?
     let hydro: Double?
     let largeHydro: Double?
     let naturalGas: Double?
@@ -29,6 +30,7 @@ struct StandardFiveMinute: Decodable, Identifiable {
         case duelFuel = "fuel_mix.dual_fuel"
         case geothermal = "fuel_mix.geothermal"
         case imports = "fuel_mix.imports"
+        case gas = "fuel_mix.gas"
         case hydro = "fuel_mix.hydro"
         case largeHydro = "fuel_mix.large_hydro"
         case naturalGas = "fuel_mix.natural_gas"

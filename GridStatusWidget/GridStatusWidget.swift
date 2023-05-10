@@ -25,7 +25,9 @@ struct Provider: IntentTimelineProvider {
     }
 
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        let data = StandardFiveMinuteResponse.example.data.map { StackedAreaChartItem($0) }
+        let data = StandardFiveMinuteResponse.example.data
+            .prefix(100)
+            .map { StackedAreaChartItem($0) }
         print("\(data.count)")
         print("new")
 

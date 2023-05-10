@@ -39,6 +39,7 @@
 		82C60F6A2A0C0917003BA504 /* StandardFiveMinute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822841DE2A0B53E8000801F4 /* StandardFiveMinute.swift */; };
 		82C60F6B2A0C0942003BA504 /* StandardFiveMinuteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822841D52A0B53E8000801F4 /* StandardFiveMinuteResponse.swift */; };
 		82C60F6C2A0C0A83003BA504 /* caiso_standardized_5_min_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 822841D92A0B53E8000801F4 /* caiso_standardized_5_min_response.json */; };
+		82C60F6F2A0C169E003BA504 /* ISOResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C60F6E2A0C169E003BA504 /* ISOResponse.swift */; };
 		82CF873929FF098400DB974C /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82CF873829FF098400DB974C /* WidgetKit.framework */; };
 		82CF873B29FF098400DB974C /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82CF873A29FF098400DB974C /* SwiftUI.framework */; };
 		82CF873E29FF098400DB974C /* GridStatusWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CF873D29FF098400DB974C /* GridStatusWidgetBundle.swift */; };
@@ -117,6 +118,8 @@
 		822EAA4829F5ACF300243ED6 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		822EAA5529F5C81800243ED6 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		82A196F62A0B1AA000F8F715 /* Date+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ext.swift"; sourceTree = "<group>"; };
+		82C60F6D2A0C13BB003BA504 /* GridStatusCommonUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = GridStatusCommonUI; path = ../GridStatusCommonUI; sourceTree = "<group>"; };
+		82C60F6E2A0C169E003BA504 /* ISOResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISOResponse.swift; sourceTree = "<group>"; };
 		82CF873629FF098400DB974C /* GridStatusWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = GridStatusWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		82CF873829FF098400DB974C /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		82CF873A29FF098400DB974C /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -190,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				822841D52A0B53E8000801F4 /* StandardFiveMinuteResponse.swift */,
+				82C60F6E2A0C169E003BA504 /* ISOResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -225,6 +229,7 @@
 		822EAA0229F5843600243ED6 = {
 			isa = PBXGroup;
 			children = (
+				82C60F6D2A0C13BB003BA504 /* GridStatusCommonUI */,
 				822EAA0D29F5843600243ED6 /* GridStatus */,
 				822EAA1F29F5843700243ED6 /* GridStatusTests */,
 				822EAA2929F5843700243ED6 /* GridStatusUITests */,
@@ -531,6 +536,7 @@
 				820D32002A03194800A2928B /* StackedAreaChartItem+ext.swift in Sources */,
 				82CF874829FF098500DB974C /* GridStatusWidget.intentdefinition in Sources */,
 				822841DF2A0B53E8000801F4 /* StandardFiveMinuteResponse.swift in Sources */,
+				82C60F6F2A0C169E003BA504 /* ISOResponse.swift in Sources */,
 				822EAA4229F5A1BA00243ED6 /* DateFormatters.swift in Sources */,
 				822841E02A0B53E8000801F4 /* GetFiveMinDataRequest.swift in Sources */,
 				822633532A035E70005D004A /* AppState+chartConfig.swift in Sources */,

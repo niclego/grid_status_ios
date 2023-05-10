@@ -36,29 +36,3 @@ public struct ISO: Decodable {
         self.primaryPowerSourceTimeUtc = try container.decode(String.self, forKey: .primaryPowerSourceTimeUtc)
     }
 }
-
-public struct ISODetailsResponse: Decodable {
-    public let data: [ISO]
-    let statusCode: Int
-    
-    enum CodingKeys: String, CodingKey {
-        case data
-        case statusCode = "status_code"
-    }
-}
-
-extension ISODetailsResponse {
-    public static let example: ISODetailsResponse = {
-        if let path = Bundle.main.path(forResource: "isos_latest_query_response", ofType: "json") {
-            do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                let resp = try JSONDecoder().decode(ISODetailsResponse.self, from: data)
-                return resp
-            } catch {
-                return .init(data: [], statusCode: 400)
-            }
-        }
-        
-        return .init(data: [], statusCode: 400)
-    }()
-}

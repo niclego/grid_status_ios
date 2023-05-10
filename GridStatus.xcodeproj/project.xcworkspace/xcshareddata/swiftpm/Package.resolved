@@ -8,15 +8,6 @@
         "branch" : "develop",
         "revision" : "6ceecbf4f049d47d87ec74b3a00fa3d4e5476a6d"
       }
-    },
-    {
-      "identity" : "gridstatuscommonui",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/niclego/GridStatusCommonUI.git",
-      "state" : {
-        "branch" : "develop",
-        "revision" : "f27aabd374b7a350eb50279599b0f13fda195d1d"
-      }
     }
   ],
   "version" : 2

@@ -12,6 +12,7 @@ extension StackedAreaChartItem {
             duelFuel: data.duelFuel,
             geothermal: data.geothermal,
             imports: data.imports,
+            gas: data.gas,
             hydro: data.hydro,
             largeHydro: data.largeHydro,
             naturalGas: data.naturalGas,

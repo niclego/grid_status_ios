@@ -24,11 +24,15 @@ struct DetailsView: View {
 
                     if let datas = datas {
                         StackedAreaChartCard (
-                            config: .init(isoId: iso.id, dataType: "Fuel Mix", showLegend: true),
+                            config: .init(isoId: iso.id, dataType: "Fuel Mix", showXAxis: true, showLegend: true),
                             datas: datas,
                             timeZone: TimeZone.on(isoId: iso.id)
                         )
                         .frame(height: 400)
+                        .onAppear {
+                            let impactMed = UIImpactFeedbackGenerator(style: .medium)
+                            impactMed.impactOccurred()
+                        }
                     } else {
                         LoadingCard()
                     }

@@ -3,8 +3,8 @@ import Core
 public struct GetISODetailsRequest: Requestable {
     public init() {}
 
-    public var responseMock: ISODetailsResponse {
-        ISODetailsResponse.example
+    public var responseMock: ISOResponse {
+        ISOResponse.example
     }
 
     public let httpMethod = NetworkManager.HttpMethod.get.method
