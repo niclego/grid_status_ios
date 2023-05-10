@@ -12,12 +12,14 @@ import GridStatusCommonUI
 
 struct Provider: IntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: ConfigurationIntent())
+        return SimpleEntry(
+            date: Date(),
+            configuration: ConfigurationIntent()
+        )
     }
 
     func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), configuration: configuration)
-        completion(entry)
+        completion(SimpleEntry(date: Date(), configuration: configuration))
     }
 
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
@@ -35,7 +37,11 @@ struct GridStatusWidgetEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
-        StackedAreaChartCard(config: .example, timeZone: Date.timeZoneFor(isoId: "caiso") ?? .current)
+        StackedAreaChartCard(
+            config: .init(isoId: "caiso", dataType: "Fuel Mix"),
+            datas: [],
+            timeZone: .current
+        )
     }
 }
 

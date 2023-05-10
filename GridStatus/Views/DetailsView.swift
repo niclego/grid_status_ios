@@ -3,9 +3,16 @@ import SwiftUI
 
 struct DetailsView: View {
     @EnvironmentObject var appState: AppState
-    
+
+    @State var datas: [StackedAreaChartItem]
+
+    init(iso: ISOViewItem, datas: [StackedAreaChartItem] = []) {
+        self.iso = iso
+        self.datas = datas
+    }
+
     let iso: ISOViewItem
-    
+
     var body: some View {
         VStack {
             ScrollView {
@@ -15,40 +22,30 @@ struct DetailsView: View {
                     } else {
                         LoadingCard()
                     }
-                    
-                    if let config = appState.chartConfig {
-                        StackedAreaChartCard(config: config, timeZone: Date.timeZoneFor(isoId: iso.id) ?? .current)
-                            .frame(height: 500)
-                    } else {
-                        LoadingCard()
-                    }
-                    
+
+                    StackedAreaChartCard (
+                        config: .init(isoId: iso.id, dataType: "Fuel Mix", showLegend: true),
+                        datas: datas,
+                        timeZone: TimeZone.on(isoId: iso.id)
+                    )
+                    .frame(height: 500)
+
                     Spacer()
                     
                     // Charts Views
                 }
                 .onAppear {
-                    var startTimeUtc: String {
-                        let date = Calendar.current.startOfDay(for: Date.now)
-                        let newDate = date.convert(from: .current, to: Date.timeZoneFor(isoId: iso.id) ?? .current)
-                        print(ISO8601DateFormatter().string(from: newDate))
-                        return ISO8601DateFormatter().string(from: newDate)
-                    }
-                    
-                    var endTimeUtc: String {
-                        let date = Calendar.current.startOfDay(for: Date.now)
-                        let nextDate = Calendar.current.date(byAdding: .day, value: 1, to: date)!
-                        let newDate = nextDate.convert(from: .current, to: Date.timeZoneFor(isoId: iso.id) ?? .current)
-                        print(ISO8601DateFormatter().string(from: newDate))
-                        return ISO8601DateFormatter().string(from: newDate)
-                    }
-
                     Task {
                         do {
-                            try await appState.fetchFiveMinData(
+                            let startEnd = Date.oneDayStartEndDate(
+                                for: Date.now,
+                                with: TimeZone.on(isoId: iso.id)
+                            )
+
+                            self.datas = try await appState.fetchFiveMinData(
                                 isoId: iso.id,
-                                startTimeUtc: startTimeUtc,
-                                endTimeUtc: endTimeUtc
+                                startTimeUtc: startEnd.start.utcString,
+                                endTimeUtc: startEnd.end.utcString
                             )
                         } catch {
                             print(error)
@@ -56,8 +53,8 @@ struct DetailsView: View {
                     }
                 }
                 .onDisappear {
+                    datas = []
                     print("see ya")
-                    appState.clear()
                 }
             }
         }
@@ -66,7 +63,10 @@ struct DetailsView: View {
 
 struct DetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailsView(iso: ISOViewItem.example)
+        DetailsView(
+            iso: ISOViewItem.example,
+            datas: StandardFiveMinuteResponse.example.data.map { StackedAreaChartItem.init($0) }
+        )
             .environmentObject(
                 AppState()
             ).padding()

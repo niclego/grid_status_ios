@@ -2,7 +2,7 @@ import Core
 import GridStatusCommonUI
 
 extension StackedAreaChartItem {
-    init(data: StandardFiveMinute) {
+    init(_ data: StandardFiveMinute) {
         self.init(
             startUtc: data.startUTC,
             batteries: data.batteries,

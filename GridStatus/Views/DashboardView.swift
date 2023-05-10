@@ -45,7 +45,7 @@ struct DashboardView: View {
                     try await appState.fetchIsos()
                     loadingState = .loaded
                     
-                    // try await appState.subscribeToIsos()
+                     try await appState.subscribeToIsos()
                 } catch {
                     print(error)
                 }
