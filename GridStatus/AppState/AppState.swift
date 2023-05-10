@@ -12,7 +12,7 @@ class AppState: ObservableObject, AppStateable {
     @Published private(set) var isos = [ISOViewItem]()
     @Published private(set) var chartConfig: ChartConfig?
     
-    let core = Core(networkManager: NetworkManager())
+    let core = Core(networkManager: NetworkManagerMock())
 
     @MainActor
     func publish(isos: [ISOViewItem]) {
