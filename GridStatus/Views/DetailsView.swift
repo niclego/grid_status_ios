@@ -4,7 +4,7 @@ import SwiftUI
 struct DetailsView: View {
     @EnvironmentObject var appState: AppState
 
-    @State var datas: [StackedAreaChartItem] = []
+    @State var datas: [StackedAreaChartItem]? = nil
 
     init(iso: ISOViewItem) {
         self.iso = iso
@@ -19,15 +19,19 @@ struct DetailsView: View {
                     if let iso = appState.isos.first(where: { $0.id == iso.id }) {
                         ISODetailsCard(iso: iso)
                     } else {
-                        LoadingCard()
+                        ISODetailsCard(iso: iso)
                     }
 
-                    StackedAreaChartCard (
-                        config: .init(isoId: iso.id, dataType: "Fuel Mix", showLegend: true),
-                        datas: datas,
-                        timeZone: TimeZone.on(isoId: iso.id)
-                    )
-                    .frame(height: 500)
+                    if let datas = datas {
+                        StackedAreaChartCard (
+                            config: .init(isoId: iso.id, dataType: "Fuel Mix", showLegend: true),
+                            datas: datas,
+                            timeZone: TimeZone.on(isoId: iso.id)
+                        )
+                        .frame(height: 400)
+                    } else {
+                        LoadingCard()
+                    }
 
                     Spacer()
                     

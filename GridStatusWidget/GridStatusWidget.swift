@@ -19,10 +19,12 @@ struct Provider: IntentTimelineProvider {
     }
 
     func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
+        print("snaps")
         completion(SimpleEntry(date: Date(), configuration: configuration))
     }
 
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+        print("timelines")
         let timeline = Timeline(entries: [SimpleEntry(date: Date(), configuration: ConfigurationIntent())], policy: .atEnd)
         completion(timeline)
     }
