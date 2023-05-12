@@ -117,6 +117,7 @@
 		822EAA4429F5A38800243ED6 /* DateFormattersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormattersTests.swift; sourceTree = "<group>"; };
 		822EAA4829F5ACF300243ED6 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		822EAA5529F5C81800243ED6 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		829C9F4F2A0DE7E6001C7978 /* GridStatusCommonUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = GridStatusCommonUI; path = ../../GridStatusCommonUI; sourceTree = "<group>"; };
 		82A196F62A0B1AA000F8F715 /* Date+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ext.swift"; sourceTree = "<group>"; };
 		82C60F6E2A0C169E003BA504 /* ISOResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISOResponse.swift; sourceTree = "<group>"; };
 		82CF873629FF098400DB974C /* GridStatusWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = GridStatusWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -228,6 +229,7 @@
 		822EAA0229F5843600243ED6 = {
 			isa = PBXGroup;
 			children = (
+				829C9F4E2A0DE768001C7978 /* Local */,
 				822EAA0D29F5843600243ED6 /* GridStatus */,
 				822EAA1F29F5843700243ED6 /* GridStatusTests */,
 				822EAA2929F5843700243ED6 /* GridStatusUITests */,
@@ -331,6 +333,14 @@
 				822EAA1029F5843600243ED6 /* DashboardView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		829C9F4E2A0DE768001C7978 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				829C9F4F2A0DE7E6001C7978 /* GridStatusCommonUI */,
+			);
+			path = Local;
 			sourceTree = "<group>";
 		};
 		82CF873729FF098400DB974C /* Frameworks */ = {
