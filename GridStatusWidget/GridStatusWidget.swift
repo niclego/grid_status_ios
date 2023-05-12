@@ -52,11 +52,13 @@ struct GridStatusWidgetEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
-        StackedAreaChartCard(
-            config: .init(isoId: "caiso", dataType: "Fuel Mix"),
-            datas: entry.data,
-            timeZone: .current
-        )
+        Link(destination: URL(string: "gridstatus://isoDetails/caiso")!) {
+            StackedAreaChartCard(
+                config: .init(isoId: "caiso", dataType: "Fuel Mix"),
+                datas: entry.data,
+                timeZone: .current
+            )
+        }
     }
 }
 

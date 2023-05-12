@@ -36,6 +36,18 @@ struct DashboardView: View {
                 .presentationDragIndicator(.visible)
         }
         .environmentObject(appState)
+        .onOpenURL { url in
+            guard
+                url.scheme == "gridstatus",
+                url.host == "isoDetails"
+            else { return }
+
+            selectedIso = nil
+            let id = url.pathComponents[1]
+            if let iso = appState.isos.first(where: { $0.id == id }) {
+                selectedIso = iso
+            }
+        }
     }
 }
 
