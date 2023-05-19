@@ -1,7 +1,10 @@
 # Created by https://www.toptal.com/developers/gitignore/api/swift,xcode
 # Edit at https://www.toptal.com/developers/gitignore?templates=swift,xcode
 
-Local/
+.DS_Store
+LocalPckge/*/**
+GridStatus.xcodeproj/project.pbxproj
+GridStatus.xcodeproj/xcuserdata/nicolaslegorrec.xcuserdatad/xcschemes/xcschememanagement.plist
 
 ### Swift ###
 # Xcode
