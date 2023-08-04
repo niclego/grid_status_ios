@@ -1,56 +1,53 @@
 // https://www.hackingwithswift.com/quick-start/swiftui/how-to-use-programmatic-navigation-in-swiftui
 
-import grid_status_common_ui
+import GridStatusCommonUI
 import SwiftUI
 
 struct DashboardView: View {
     @Environment(\.colorScheme) var colorScheme
-
     @StateObject var appState: AppState
-    
     @State var selectedIso: ISOViewItem? = nil
-    @State var loadingState: LoadableContent.LoadingState = .noData
-
+    
     var body: some View {
         VStack {
             HStack {
-                GridStatusHeaderView()
+                HeaderView()
                 Spacer()
-            }.padding([.top, .leading], 12)
-            
-            Spacer()
-            
-            LoadableContent.ContainerView(loadingState: loadingState) {
-                ErrorRetryView (
-                    retryAction: {}
-                )
-            } content: {
-                ISOCardList(isos: appState.isos) { iso in
-                    selectedIso = iso
-                }
+            }.padding([.top, .leading])
+
+            ISOCardList(isos: appState.isos) { iso in
+                selectedIso = iso
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .refreshable {
+                await appState.fetchIsos()
+            }
         }
         .background(GridStatusColor.dashboardBackground.color(scheme: colorScheme))
         .onAppear {
-            loadingState = .loading
             Task {
-                try await appState.fetchIsos()
-                loadingState = .loaded
-                try await appState.subscribe()
-            }
-        }
-        .refreshable {
-            Task {
-                try await appState.fetchIsos()
+                await appState.fetchIsos()
+                await appState.subscribeToIsos()
             }
         }
         .sheet(item: $selectedIso) { iso in
-            ChartsView(iso: iso)
+            DetailsView(iso: iso)
                 .padding()
                 .presentationBackground(GridStatusColor.dashboardBackground.color(scheme: colorScheme))
+                .presentationDragIndicator(.visible)
         }
         .environmentObject(appState)
+        .onOpenURL { url in
+            guard
+                url.scheme == "gridstatus",
+                url.host == "isoDetails"
+            else { return }
+
+            selectedIso = nil
+            let id = url.pathComponents[1]
+            if let iso = appState.isos.first(where: { $0.id == id }) {
+                selectedIso = iso
+            }
+        }
     }
 }
 

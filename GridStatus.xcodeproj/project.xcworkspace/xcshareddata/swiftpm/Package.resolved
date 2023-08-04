@@ -1,21 +1,21 @@
 {
   "pins" : [
     {
-      "identity" : "grid_status_common_ui",
+      "identity" : "core",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/niclego/grid_status_common_ui.git",
+      "location" : "https://github.com/niclego/Core.git",
       "state" : {
         "branch" : "develop",
-        "revision" : "91c6193258d786334f5bf273e3c7c66b852b22c4"
+        "revision" : "6ceecbf4f049d47d87ec74b3a00fa3d4e5476a6d"
       }
     },
     {
-      "identity" : "grid_status_core",
+      "identity" : "gridstatuscommonui",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/niclego/grid_status_core.git",
+      "location" : "https://github.com/niclego/GridStatusCommonUI.git",
       "state" : {
         "branch" : "develop",
-        "revision" : "850197ce473df3bd3f187ad874a16b9b4abbb912"
+        "revision" : "2dbf4e91a25cc8a1284f370aa8518a910eca0d1e"
       }
     }
   ],

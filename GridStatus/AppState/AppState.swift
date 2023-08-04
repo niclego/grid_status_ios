@@ -1,9 +1,16 @@
-import grid_status_common_ui
+import GridStatusCommonUI
 import Combine
+import Core
 
-class AppState: ObservableObject {
+protocol AppStateable: ObservableObject {
+    func publish(isos: [ISOViewItem])
+}
+
+class AppState: ObservableObject, AppStateable {
     @Published private(set) var isos = [ISOViewItem]()
-    
+
+    let core = Core(networkManager: NetworkManagerMock())
+
     @MainActor
     func publish(isos: [ISOViewItem]) {
         self.isos = isos

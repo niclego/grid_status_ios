@@ -5,7 +5,6 @@
 //  Created by Nicolas Le Gorrec on 4/23/23.
 //
 
-@testable import GridStatus
 import XCTest
 
 final class ISOTests: XCTestCase {
@@ -16,18 +15,6 @@ final class ISOTests: XCTestCase {
     
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-    
-    func testISODecode() throws {
-        if let path = Bundle.main.path(forResource: "isos_latest_query_response", ofType: "json") {
-            do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                let isoResponse = try JSONDecoder().decode(ISOLatestResonse.self, from: data)
-                XCTAssert(!isoResponse.data.isEmpty)
-            } catch {
-                throw error
-            }
-        }
     }
     
     func testPerformanceExample() throws {
